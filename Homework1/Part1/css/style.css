@@ -17,10 +17,38 @@ nav {
     
 }
 
+.Other {
+    display: grid;
+    justify-content: space-between;
+    grid-column-gap: 50px;
+}
+
+.Other > p {
+    grid-row: 3/4;
+}
+
+hr {
+    height: 1px;
+    color: #333;
+    background-color: #333
+}
+
+.Other > img {
+    grid-row: 1/2;
+    width: 250px;
+    height: 150px;
+    
+
+}
+
 
 main > h2 {
     background-color:  rgb(191, 213, 255);
     
+}
+
+body {
+    background-color: rgb(191, 213, 255);
 }
 
 .about {
@@ -32,24 +60,30 @@ main > h2 {
     
 }
 
-article > img {
+article > .Trending > img {
+    width: 400px;
+    height: 300px;
+    grid-row: 1;
+}
+ 
+a > img {
     width: 400px;
     height: 300px;
     grid-row: 1;
 }
 
-article > h2 {
+article > .Trending > h2 {
     grid-row: 2;
 }
 
-article > p {
+article > .Trending > p {
     grid-row: 3/4;
     
     
 }
 
 
-article {
+article > .Trending {
     display: grid;
     justify-content: center;
     grid-column-gap: 50px;
@@ -77,6 +111,10 @@ a {
 main {
     text-align: center;
 
+}
+
+.OtherNewsTitle {
+    text-align: center;
 }
 
 

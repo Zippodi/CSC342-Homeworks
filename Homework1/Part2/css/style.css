@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color:rgb(255, 255, 255);
+}
+
+#logo {
+    background-color: rgb(2, 41, 41);
+    padding: 12px;
+    border-radius: 10px;
+    
+}
+
+#NCSU {
+    background-color: red;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: larger;
+}
+
+.student {
+    display: grid;
+    background-color: red;
+    border-radius: 10px;
+    width: 250px;
+    float: right;
+}
+
+#studentPhoto {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border-radius: 200px;
+    
+}
+
+#username {
+    text-align: center; 
+    
+    color: black;
+    font-size: larger;
+    
+}
+
+#email {
+    text-align: center; 
+
+    color: black;
+    font-size: larger;
+}
+
+ .links {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(21, 42, 82);
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    
+    justify-content: space-between;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+} 
+ 
+a {
+    
+    color: white;
+}

@@ -16,6 +16,7 @@ body {
     height: 100vh;
     background-color: rgb(19, 19, 70);
     
+    
 }
 
 #logo {
@@ -44,7 +45,7 @@ body {
 
 #studentPhoto { 
     border-radius: 300px;
-    width: 15vw;
+    width: 10vw;
 
     
 }
@@ -72,6 +73,8 @@ body {
     align-items:center;
     font-size: larger;
 
+    
+
 }  
 
 .asidefooterlinks {
@@ -81,8 +84,81 @@ body {
     align-items:center;
     font-size: larger;
     
+    
 }
  
-a {
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    padding: 10px;
+    border-radius: 10px;
+    width: 20vw;
+    float: left;
+}
+
+#Greetings {
+    color: white; 
+    font-size: larger;
+    padding-right: 3%;
+}
+
+#search {
+    color: white; 
+    font-size: larger;
+    padding-right: 3%;
+}
+
+
+ .headerRight {
+    display: flex;
+    width: 60vw;
+    height: 10vh;
+ }
+
+
+
+/* .accountDropdown:active {
+    visibility: hidden;
+} */
+
+#sidebarsettings {
     color: white;
-} 
+}
+
+#sidebarlogout {
+    color: white;
+}
+
+#sidebardashboard {
+    color: white;
+}
+
+#sidebarforms {
+    color: white;
+}
+
+#sidebarfeatures {
+    color: white;
+}
+
+#sidebarbuttons {
+    color: white;
+}
+
+#sidebartypography {
+    color: white;
+}
+
+#sidebartables {
+    color: white;
+}
+
+#sidebarcharts {
+    color: white;
+}
+
+#studentButton {
+    height: 10px;
+
+}

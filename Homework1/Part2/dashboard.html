@@ -121,7 +121,7 @@
               <li role="menuitem" id="edit">
                 <a href="#">Edit profile</a>
               </li>
-              <li role="menuitem">
+              <li role="menuitem" id="logout">
                 <a href="#">Logout</a>
               </li>
             </ul>
@@ -130,14 +130,14 @@
         <!-- end account dropdown -->
 
         <!-- Settings Dropdown -->
-        <div>
-          <button>&#9881;</button>
-          <div tabindex="-1">
+        <div class="settingsDropdown">
+          <button id="settingsbutton">&#9881;</button>
+          <div tabindex="-1" class="settingsandupdate">
             <ul role="menu" aria-hidden="true" aria-orientation="vertical">
-              <li role="menuitem">
+              <li role="menuitem" id="settings">
                 <a href="#">Settings</a>
               </li>
-              <li role="menuitem">
+              <li role="menuitem" id="update">
                 <a href="#">Update</a>
               </li>
             </ul>
@@ -146,11 +146,11 @@
         <!-- End settings dropdown -->
 
         <!-- Notifications dropdown -->
-        <div>
-          <button>
+        <div class="notificationsdropdown">
+          <button id="notificationsbutton">
             &#9888;
           </button>
-          <div tabindex="-1">
+          <div tabindex="-1"  class="notifications">
             <h6> Notifications</h6>
             <ul role="menu" aria-hidden="true" aria-orientation="vertical">
               <li role="menuitem">
@@ -171,12 +171,12 @@
         <!-- End Notifications dropdown -->
 
         <!-- Messages dropdown -->
-        <div>
-          <button>&#9993;
+        <div class="messagesdropdown">
+          <button id="messagesButton">&#9993;
             <!-- Count Badge -->
             <span>3</span>
           </button>
-          <div tabindex="-1">
+          <div tabindex="-1" class="messages">
             <h6>Messages</h6>
             <ul role="menu" aria-hidden="true" aria-orientation="vertical">
               <li role="menuitem">
@@ -202,26 +202,26 @@
     <!-- partial -->
     <main>
       <!-- Dashboard info boxes -->
-      <div>
-        <div>
+      <div class="boxes">
+        <div class="borrowed">
           <h5>Borrowed</h5>
           <h5>$62,0076.00</h5>
           <p>48% target reached</p>
         </div>
 
-        <div>
+        <div class="profit">
           <h5>Annual Profit</h5>
           <h5>$1,958,104.00</h5>
           <p>55% target reached</p>
         </div>
 
-        <div>
+        <div class="conversion">
           <h5>Lead Conversion</h5>
           <h5>$234,769.00</h5>
           <p>87% target reached</p>
         </div>
 
-        <div>
+        <div class="income">
           <h5>Average Income</h5>
           <h5>$1,200.00</h5>
           <p>87% target reached</p>

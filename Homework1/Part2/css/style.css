@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(123, 195, 243);
 }
 
 .sidebar {
@@ -112,15 +112,164 @@ body {
 
  .headerRight {
     display: flex;
-    width: 60vw;
+    flex-direction: row-reverse;
+    justify-content: right;
+    /* background-color: rgb(48, 48, 48);  */
+    border-radius: 10px;
+    width: 55vw;
     height: 10vh;
+    right: 0;
  }
 
 
 
-/* .accountDropdown:active {
-    visibility: hidden;
-} */
+.accountDropdown .editandlogout {
+    display: none;
+}
+.accountDropdown:hover .editandlogout {
+    display: block;
+    border: 1px solid black;
+    background-color: rgb(19, 19, 70);
+    border-radius: 10px;
+    
+    padding: 10px;
+    position: fixed;
+}
+
+.accountDropdown:hover .editandlogout a {
+    text-decoration: none;
+    color: white;
+}
+
+.settingsDropdown .settingsandupdate {
+    display: none;
+}
+.settingsDropdown:hover .settingsandupdate {
+    display: block;
+    padding:10px;
+    border: 1px solid black;
+    background-color: rgb(19, 19, 70);
+    border-radius: 10px;
+    position: fixed;
+}
+
+.settingsDropdown:hover .settingsandupdate a {
+    text-decoration: none;
+    color: white;
+}
+
+.notificationsdropdown .notifications {
+    display: none;
+}
+.notificationsdropdown:hover .notifications {
+    display: block;
+    padding:10px;
+    border: 1px solid black;
+    background-color: rgb(19, 19, 70);
+    border-radius: 10px;
+    position: fixed;
+    
+}
+
+.notificationsdropdown:hover .notifications h6 {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+.notificationsdropdown:hover .notifications a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+.notifications {
+    color: white;
+}
+
+.messagesdropdown .messages {
+    display: none;
+}
+.messagesdropdown:hover .messages {
+    display: block;
+    padding:10px;
+    border: 1px solid black;
+    background-color: rgb(19, 19, 70);
+    border-radius: 10px;
+    position: fixed;
+}
+
+.messagesdropdown:hover .messages h6 {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+.messagesdropdown:hover .messages a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+.messages {
+    color: white;
+    font-size: larger;
+}
+
+#edit {
+    color:white;
+}
+
+#logout {
+    color:white;
+}
+
+#settings {
+    color:white;
+}
+
+#update {
+    color:white;
+}
+
+.studentButton {
+    background-color: rgb(151, 148, 148);
+    color: white;
+    border-radius: 10px;
+    font-size: larger;
+}
+
+#settingsbutton {
+    width: 3vw;
+    height: 3vh;
+    font-size: larger;
+    background-color: rgb(151, 148, 148);
+    border-radius: 10px;
+}
+
+#notificationsbutton {
+    width: 3vw;
+    height: 3vh;
+    font-size: larger;
+    background-color: rgb(151, 148, 148);
+    border-radius: 10px;
+    color: rgb(255, 255, 0);
+}
+
+#messagesButton > span {
+    
+    font-size: smaller;
+    color: red;
+}
+
+#messagesButton {
+    width: 3vw;
+    height: 3vh;
+    font-size: larger;
+    background-color: rgb(151, 148, 148);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
 
 #sidebarsettings {
     color: white;
@@ -161,4 +310,51 @@ body {
 #studentButton {
     height: 10px;
 
+}
+
+
+
+.boxes {
+    display: inline-grid;
+    width: 70vw;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+    gap: 10px;
+    
+}
+
+.borrowed {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: purple;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.profit {
+    grid-column: 2;
+    grid-row: 1;
+    color: white;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.conversion {
+    grid-column: 1;
+    grid-row: 2;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.income {
+    grid-column: 2;
+    grid-row: 2;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+    padding: 10px;
 }

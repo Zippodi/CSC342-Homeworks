@@ -5,7 +5,8 @@
 }
 
 body {
-    background-color:rgb(123, 195, 243);
+    /* background-color:rgb(123, 195, 243); */
+    background-color: rgb(19, 19, 70);
 }
 
 .sidebar {
@@ -14,7 +15,8 @@ body {
     top: 0;
     width: 20vw;
     height: 100vh;
-    background-color: rgb(19, 19, 70);
+    
+    background-color: rgb(128, 0, 0);
     
     
 }
@@ -27,11 +29,15 @@ body {
 }
 
 #NCSU {
-    background-color: red;
+    /* background-color: red; */
+    display: flex;
     color: rgb(255, 255, 255);
     padding: 10px;
+    justify-content: center;
+    
     border-radius: 10px;
-    font-size: larger;
+    font-size: 2vh;
+
 }
 
 
@@ -54,7 +60,7 @@ body {
     text-align: center; 
     
     color: white;
-    font-size: larger;
+    font-size: 2vh;
     
 }
 
@@ -62,7 +68,7 @@ body {
     text-align: center; 
 
     color: white;
-    font-size: larger;
+    font-size: 2vh;
 }
 
 .links {
@@ -90,7 +96,7 @@ body {
 .headerLeft {
     display: flex;
     flex-direction: row;
-    background-color: red;
+    background-color: rgb(128, 0, 0);
     padding: 10px;
     border-radius: 10px;
     width: 20vw;
@@ -129,7 +135,7 @@ body {
 .accountDropdown:hover .editandlogout {
     display: block;
     border: 1px solid black;
-    background-color: rgb(19, 19, 70);
+    background-color: rgb(43, 39, 42);
     border-radius: 10px;
     
     padding: 10px;
@@ -148,7 +154,7 @@ body {
     display: block;
     padding:10px;
     border: 1px solid black;
-    background-color: rgb(19, 19, 70);
+    background-color: rgb(43, 39, 42);
     border-radius: 10px;
     position: fixed;
 }
@@ -165,7 +171,7 @@ body {
     display: block;
     padding:10px;
     border: 1px solid black;
-    background-color: rgb(19, 19, 70);
+    background-color: rgb(43, 39, 42);
     border-radius: 10px;
     position: fixed;
     
@@ -194,7 +200,7 @@ body {
     display: block;
     padding:10px;
     border: 1px solid black;
-    background-color: rgb(19, 19, 70);
+    background-color: rgb(43, 39, 42);
     border-radius: 10px;
     position: fixed;
 }
@@ -273,37 +279,46 @@ body {
 
 #sidebarsettings {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebarlogout {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebardashboard {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebarforms {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebarfeatures {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebarbuttons {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebartypography {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebartables {
     color: white;
+    font-size: 3vh;
 }
 
 #sidebarcharts {
+    font-size: 3vh;
     color: white;
 }
 
@@ -321,40 +336,192 @@ body {
     grid-template-rows: 2;
     gap: 10px;
     
+    
 }
 
 .borrowed {
     grid-column: 1;
     grid-row: 1;
-    background-color: purple;
+    background-color:rgb(19, 116, 116);
     color: white;
     border-radius: 10px;
     padding: 10px;
+    
+}
+
+.borrowed h5 {
+    font-size: 55px;
+    
+}
+
+.borrowed p {
+    font-size: 30px; 
 }
 
 .profit {
     grid-column: 2;
     grid-row: 1;
     color: white;
-    background-color: orange;
+    background-color:rgb(53, 110, 110);
     border-radius: 10px;
     padding: 10px;
+   
+}
+
+.profit h5 {
+    font-size: 55px;
+    
+}
+
+.profit p {
+    font-size: 30px; 
 }
 
 .conversion {
     grid-column: 1;
     grid-row: 2;
     color: white;
-    background-color: red;
+    background-color:rgb(10, 15, 15);
     border-radius: 10px;
     padding: 10px;
+    
+}
+
+.conversion h5 {
+    font-size: 55px;
+    
+}
+
+.conversion p {
+    font-size: 30px; 
 }
 
 .income {
     grid-column: 2;
     grid-row: 2;
     color: white;
-    background-color: green;
+    background-color:rgb(10, 44, 44);
     border-radius: 10px;
     padding: 10px;
+    
+}
+
+.income h5 {
+    font-size: 55px; 
+}
+
+.income p {
+    font-size: 30px; 
+}
+
+
+ /* .locationrevenues {
+    display: inline-flex;
+    grid-template-rows: 10;
+    grid-template-columns: 1;
+    width: 70vw;
+    gap: 20px;
+}  */
+
+#titlerevenue {
+    /* grid-row: 1;
+    grid-column: 1/5; */
+    background-color: blueviolet;
+    display: inline-flex;
+    justify-content: center;
+    width: 70vw;
+    font-size: 55px;
+    border-radius: 10px;
+}
+
+.locrevenuessubtitles {
+    /* grid-row: 2;
+    grid-column: 1/5; */
+    display:inline-flex;
+    width: 70vw;
+    font-size: 40px;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.locrevenuessubtitles > h5 {
+    color:white;
+    
+}
+
+#locrevbutton {
+    width: 20vw;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: rgb(9, 87, 150);
+    color:white;
+    
+}
+
+#mapimage {
+    grid-row: 3/7;
+    grid-column: 1/5;
+}
+
+.locationtable {
+    display: inline-grid;
+    grid-template-columns: 5;
+    grid-template-rows: 3;
+    background-color: antiquewhite;
+    width: 70vw;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.usa {
+    display: flex;
+    grid-row: 1;
+    grid-column: 1/5;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.phillipines {
+    display: flex;
+    grid-row: 2;
+    grid-column: 1/5;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.uk {
+    display: flex;
+    grid-row: 3;
+    grid-column: 1/5;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.canada {
+    display: flex;
+    grid-row: 4;
+    grid-column: 1/5;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.france {
+    display: flex;
+    grid-row: 5;
+    grid-column: 1/5;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapimage {
+    width: 70vw;
 }

@@ -5,7 +5,6 @@
 }
 
 body {
-    /* background-color:rgb(123, 195, 243); */
     background-color: rgb(19, 19, 70);
 }
 
@@ -13,8 +12,8 @@ body {
     position: fixed;
     right: 0;
     top: 0;
-    /* width: 20vw; */
-    width: fit-content;
+    width: 20vw;
+    min-width: fit-content;
     height: 100vh;
     
     background-color: rgb(128, 0, 0);
@@ -30,7 +29,6 @@ body {
 }
 
 #NCSU {
-    /* background-color: red; */
     display: flex;
     color: rgb(255, 255, 255);
     padding: 10px;
@@ -53,6 +51,7 @@ body {
 #studentPhoto { 
     border-radius: 300px;
     width: 10vw;
+    min-width: 100px;
 
     
 }
@@ -100,8 +99,8 @@ body {
     background-color: rgb(128, 0, 0);
     padding: 10px;
     border-radius: 10px;
-    /* width: 20vw; */
-    width: fit-content;
+    width: 20vw;
+    min-width: fit-content;
     float: left;
 }
 
@@ -124,7 +123,6 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: right;
-    /* background-color: rgb(48, 48, 48);  */
     border-radius: 10px;
     width: 55vw;
     height: 10vh;
@@ -342,13 +340,13 @@ body {
 
 
 .boxes {
-    display: inline-grid;
-    width: 70vw;
-    grid-template-columns: 2;
-    grid-template-rows: 2;
-    gap: 10px;
-    
-    
+    display: grid;
+    width: 75vw;
+    grid-template-columns: 4;
+    grid-template-rows: 1;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    gap: 5px;
 }
 
 .borrowed {
@@ -356,20 +354,19 @@ body {
     flex-direction: column;
     grid-column: 1;
     grid-row: 1;
-    background-color:rgb(19, 116, 116);
     color: white;
+    align-items: center;
+    background-color:rgb(9, 20, 20);
     border-radius: 10px;
-    padding: 10px;
-    
+
 }
 
-.borrowed h5 {
-    font-size: 55px;
-    
+.borrowed > h5 {
+    font-size: 2em;
 }
 
-.borrowed p {
-    font-size: 30px; 
+.borrowed > p {
+    font-size: 1.5em;
 }
 
 .profit {
@@ -378,170 +375,354 @@ body {
     grid-column: 2;
     grid-row: 1;
     color: white;
-    background-color:rgb(53, 110, 110);
+    align-items: center;
+    background-color:rgb(20, 36, 36);
     border-radius: 10px;
-    padding: 10px;
-   
 }
 
-.profit h5 {
-    font-size: 55px;
-    
+.profit> h5 {
+    font-size: 2em;
 }
 
-.profit p {
-    font-size: 30px; 
+.profit > p {
+    font-size: 1.5em;
 }
 
 .conversion {
     display: flex;
     flex-direction: column;
-    grid-column: 1;
-    grid-row: 2;
-    color: white;
+    grid-column: 3;
+    grid-row: 1;
     background-color:rgb(10, 15, 15);
+    color: white;
+    align-items: center;
     border-radius: 10px;
-    padding: 10px;
-    
 }
 
-.conversion h5 {
-    font-size: 55px;
-    
+.conversion > h5 {
+    font-size: 2em;
 }
 
-.conversion p {
-    font-size: 30px; 
+.conversion > p {
+    font-size: 1.5em;
 }
 
 .income {
     display: flex;
     flex-direction: column;
-    grid-column: 2;
-    grid-row: 2;
+    grid-column: 4;
+    grid-row: 1;
+    background-color:rgb(20, 36, 36);
     color: white;
-    background-color:rgb(10, 44, 44);
+    align-items: center;
     border-radius: 10px;
-    padding: 10px;
-    
 }
 
-.income h5 {
-    font-size: 55px; 
+.income > h5 {
+    font-size: 2em;
 }
 
-.income p {
-    font-size: 30px; 
+.income > p {
+    font-size: 1.5em;
 }
 
 
- /* .locationrevenues {
-    display: inline-flex;
-    grid-template-rows: 10;
-    grid-template-columns: 1;
-    width: 70vw;
-    gap: 20px;
-}  */
 
-#titlerevenue {
-    /* grid-row: 1;
-    grid-column: 1/5; */
-    background-color: blueviolet;
-    display: inline-flex;
+.revlocations {
+    display: grid;
+    width: 75vw;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    background-color: #295529;
+    grid-template-columns: 3;
+    grid-template-rows: 4;
+}
+
+#loctitle {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width: 70vw;
-    font-size: 55px;
-    border-radius: 10px;
+    grid-row: 1;
+    grid-column: 1;
+    color: white;
+    font-size: 3.5em;
+
+
+
+}
+.locsubtitles {
+    display: flex;
+    flex-direction: column;
+    grid-row: 2/4;
+    grid-column: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-.locrevenuessubtitles {
-    /* grid-row: 2;
-    grid-column: 1/5; */
-    display:inline-flex;
-    width: 70vw;
-    font-size: 40px;
-    background-color: aqua;
+.locsubtitles > h5 {
+    font-size: 1.5em;
+}
+
+#sevendaysbutton {
+    font-size: 2em;
+}
+
+.dataandmap {
+    display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-}
-
-.locrevenuessubtitles > h5 {
-    color:white;
-    
-}
-
-#locrevbutton {
-    width: 20vw;
-    height: 5vh;
-    border-radius: 10px;
-    background-color: rgb(9, 87, 150);
-    color:white;
-    
-}
-
-#mapimage {
-    grid-row: 3/7;
-    grid-column: 1/5;
+    background-color: #082215;
+    grid-row: 1/4;
+    grid-column: 2/3;
 }
 
 .locationtable {
-    display: inline-grid;
-    grid-template-columns: 5;
-    grid-template-rows: 3;
-    background-color: antiquewhite;
-    width: 70vw;
-    border-radius: 10px;
-    gap: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    width: 700px;
+    font-size: 1.75em; 
 }
+
 
 .usa {
+    width: 100%;
     display: flex;
-    grid-row: 1;
-    grid-column: 1/5;
-    font-size: 30px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
-
 .phillipines {
+    width: 100%;
     display: flex;
-    grid-row: 2;
-    grid-column: 1/5;
-    font-size: 30px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
 .uk {
+    width: 100%;
     display: flex;
-    grid-row: 3;
-    grid-column: 1/5;
-    font-size: 30px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
 .canada {
+    width: 100%;
     display: flex;
-    grid-row: 4;
-    grid-column: 1/5;
-    font-size: 30px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
 .france {
+    width: 100%;
     display: flex;
-    grid-row: 5;
-    grid-column: 1/5;
-    font-size: 30px;
+    justify-content: space-between;
     align-items: center;
+}
+
+.impressionsandtraffic {
+    display: grid;
+    width: 75vw;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    gap: 10px
+}
+
+.impressions {
+    grid-row: 1;
+    display: grid;
+    color: white;
+    background-color: rgb(65, 20, 35);
+}
+
+
+#impressionstitle {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.impressionsinfo {
+    grid-row: 2;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: self-start;
+    background-color: rgb(99, 34, 56);
+}
+
+.impressionsdata {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    font-size: 2em;
+}
+
+
+#impressionsimage {
+    width: 100%;
+}
+
+.traffic {
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+    
+    background-color: rgb(51, 5, 21);
+    color: white;
+}
+
+#traffictitle {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+
+}
+
+.trafficinfo {
+    grid-row: 2;
+    background-color: rgb(88, 18, 42);
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: self-start;
+}
+
+.trafficdata {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    width: max-content;
+    font-size: 2em;
+}
+
+
+#trafficimage {
+    width: 100%;
+}
+
+.revenueloc2andorderstats {
+    display: grid;
+    width: 75vw;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    gap: 10px;
+    
+}
+
+.revenuebyloc2 {
+    grid-row: 1;
+    grid-column: 1;
+    
+    background-color: rgb(27, 48, 43);
+    
+    display: grid;
+}
+
+#revloc2title {
+    color: white;
+    grid-row: 1;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+.subtitleanddataandbuttons {
+    display: grid;
+    grid-row: 2;
+    background-color: rgba(0, 0, 0, 0.233);
+}
+
+#revloc2subtitle {
+    color: white;
+    display: flex;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1;
+}
+
+.imagecontainerbarchart {
+    /* grid-row: 2; */
+    grid-row: 3;
+    display: flex;
     justify-content: center;
 }
 
-#mapimage {
-    width: 70vw;
+.buttons {
+    display: flex;
+    justify-content: center;
 }
+
+.orderstats {
+    background-color: orange;
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+}
+
+
+#barimage {
+    width: 37.5vw;
+    
+}
+.orderstatstitleandsubtitlecontainer {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.orderstatsimagecontainer {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+.orderstatstitleandsubtitle {
+    background-color: #295529;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ .orderstatstitleandsubtitle > h4 {
+    font-size: 3em;
+
+}
+
+.orderstatstitleandsubtitle > h6 {
+    font-size: 2em;
+}
+
+#orderimage {
+    width: 37.5vw;
+    
+}
+
+
+ 
+
+
+

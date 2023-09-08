@@ -230,14 +230,14 @@
 
 
       <!-- CARD => Revenue by location  (Map)-->
-      <div>
-        <h4 id="titlerevenue">Revenue by location</h4>
+      <div class="revlocations">
+        <h4 id="loctitle">Revenue by location</h4>
 
         <!-- Subtitle info -->
-        <div class="locrevenuessubtitles">
+        <div class="locsubtitles">
             <h5>Sales performance revenue based by country</h5>
             <div>
-              <button id="locrevbutton">
+              <button id="sevendaysbutton">
                   Last 7 days
               </button>
             </div>
@@ -245,7 +245,7 @@
         <!-- End subtitle info -->
 
         <!-- Data and map -->
-        <div>
+        <div class="dataandmap">
           <div>
               <div>
                 <table>
@@ -281,7 +281,7 @@
           </div>
 
           <div>
-            <div>
+            <div class="imagecontainer">
               <img id="mapimage" src="./images/map.png"/>
             </div>
           </div>
@@ -291,19 +291,19 @@
       <!-- End of Revenue by location -->
 
       <!-- Grid -->
-      <div>
+      <div class="impressionsandtraffic">
         <!-- Card => Impressions chart -->
-        <div>
-          <h3>Impressions</h3>
-          <div>
+        <div class="impressions">
+          <h3 id="impressionstitle">Impressions</h3>
+          <div class="impressionsinfo">
             <div>
-              <div>
+              <div class="impressionsdata">
                 <h5>Customers 58.39k</h5>
                 <h2>636,757K</h2>
               </div>
             </div>
-            <div>
-              <img src="./images/impressions.png"/>
+            <div class="impressionsimagecontainer">
+              <img id="impressionsimage" src="./images/impressions.png"/>
             </div>
           </div>
         </div>
@@ -311,17 +311,17 @@
 
 
         <!-- Card => Traffic chart -->
-        <div>
-          <h3>Traffic</h3>
-          <div>
+        <div class="traffic">
+          <h3 id="traffictitle">Traffic</h3>
+          <div class="trafficinfo">
             <div>
-              <div>
+              <div class="trafficdata">
                 <h5>Customers 58.39k</h5>
                 <h2>636,757K</h2>
               </div>
             </div>
-            <div>
-              <img src="./images/traffic.png"/>
+            <div class="trafficimagecontainer">
+              <img id="trafficimage" src="./images/traffic.png"/>
             </div>
           </div>
         </div>
@@ -329,17 +329,17 @@
       </div>
 
       <!-- Grid 2/3 and 1/3 -->
-      <div>
+      <div class="revenueloc2andorderstats">
         <!-- Card => Revenue by location 2 -->
-        <div>
-          <h4>Revenue by location</h4>
-          <div>
-            <h6>Sales performance revenue based by country</h6>
-            <div>
+        <div class="revenuebyloc2">
+          <h4 id="revloc2title">Revenue by location</h4>
+          <div class="subtitleanddataandbuttons">
+            <h6 id="revloc2subtitle">Sales performance revenue based by country</h6>
+            <div class="buttonsdiv">
               <div role="tablist">
                 <div>
                   <div>
-                    <div>
+                    <div class="buttons">
                       <button role="tab" aria-selected="true" tabindex="0">
                         <span>1W</span>
                       </button>
@@ -358,23 +358,23 @@
               </div>
             </div>
           </div>
-          <div>
-            <img src="./images/bar-chart.png"/>
+          <div class="imagecontainerbarchart">
+            <img id="barimage" src="./images/bar-chart.png"/>
           </div>
         </div>
         <!-- End of Revenue by location 2 -->
 
         <!-- Card => Order Statistics -->
-        <div>
-          <div>
-            <div>
-              <h4>Order Statistics</h4>
-              <h6>Customers 58.39k</h6>
+        <div class="orderstats">
+          <div class="orderstatstitleandsubtitlecontainer">
+            <div class="orderstatstitleandsubtitle">
+              <h4 id="ordertitle">Order Statistics</h4>
+              <h6 id="customers">Customers 58.39k</h6>
             </div>
             <div id="sales-legend"></div>
           </div>
-          <div>
-            <img src="./images/order-stats.png"/>
+          <div class="orderstatsimagecontainer">
+            <img id="orderimage" src="./images/order-stats.png"/>
           </div>
         </div>
         <!-- End of Order Statistics -->

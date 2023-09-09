@@ -2,7 +2,7 @@
 
 
 
-
+## Links to images used online
 
 Purple Panda Image Link: https://tengaged.com/blog/Steven7/6776218/look-rare-purple-panda
 
@@ -23,7 +23,9 @@ Bubblegum image link: https://www.uselessdaily.com/news/20-fun-facts-about-bubbl
 
 Baby with six-pack image link: https://www.desicomments.com/funnypics/baby-six-pack-abs-funny/
 
-Homework 1 Part 1 landing.html: https://github.ncsu.edu/engr-csc342/csc342-2023Fall-cbdocke2/blob/main/Homework1/Part1/landing.html
+##Links to Homework 1 html pages
 
-Homework 1 Part 2 dashboard.html: https://github.ncsu.edu/engr-csc342/csc342-2023Fall-cbdocke2/blob/main/Homework1/Part2/dashboard.html
+Homework 1 Part 1 [landing.html](https://github.ncsu.edu/engr-csc342/csc342-2023Fall-cbdocke2/blob/main/Homework1/Part1/landing.html)
+
+Homework 1 Part 2 [dashboard.html](https://github.ncsu.edu/engr-csc342/csc342-2023Fall-cbdocke2/blob/main/Homework1/Part2/dashboard.html)
 

@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(31, 31, 44);
+    
+}
+
+
+.calculatorbody {
+    background-color: rgb(88, 21, 88);
+    height: 750px;
+    width: 600px;
+
+}
+
+#textbox {
+    background-color: rgb(255, 255, 255);
+    border: solid black 2px;
+    width: 100%;
+}

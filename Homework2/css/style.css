@@ -14,17 +14,20 @@ body {
     /* background-color: rgb(88, 21, 88); */
     
     display: flex;
-    /* justify-content: space-between; */
+    
     flex-direction: column;
     height: 750px;
     width: 600px;
+    
 }
 
 .keys {
     
     display: grid;
     gap: 20px;
-
+    height: 75vh;
+    background-color: wheat;
+    
 }
 
 #zero {
@@ -37,7 +40,8 @@ body {
     grid-row: 4;
     grid-column: 2;
     box-shadow: 5px 5px;
-    
+    height: 1.5em;
+    border: solid black 3px;    
 }
 
 #one {
@@ -47,6 +51,8 @@ body {
     grid-row: 3;
     grid-column: 1;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #two {
@@ -56,6 +62,8 @@ body {
     grid-row: 3;
     grid-column: 2;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #three {
@@ -65,6 +73,8 @@ body {
     grid-row: 3;
     grid-column: 3;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #four {
@@ -74,6 +84,8 @@ body {
     grid-row: 2;
     grid-column: 1;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #five {
@@ -83,6 +95,8 @@ body {
     grid-row: 2;
     grid-column: 2;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #six {
@@ -92,6 +106,8 @@ body {
     grid-row: 2;
     grid-column: 3;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #seven {
@@ -101,6 +117,8 @@ body {
     grid-row: 1;
     grid-column: 1;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #eight {
@@ -110,6 +128,8 @@ body {
     grid-row: 1;
     grid-column: 2;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #nine {
@@ -119,6 +139,8 @@ body {
     grid-row: 1;
     grid-column: 3;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #plussign {
@@ -128,6 +150,8 @@ body {
     grid-row: 4;
     grid-column: 4;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 
 }
 
@@ -138,6 +162,8 @@ body {
     grid-row: 3;
     grid-column: 4;
     box-shadow: 5px 5px;
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #Xsign{
@@ -147,7 +173,8 @@ body {
     grid-row: 2;
     grid-column: 4;
     box-shadow: 5px 5px;
-
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #slash {
@@ -157,7 +184,8 @@ body {
     grid-row: 1;
     grid-column: 4;
     box-shadow: 5px 5px;
-
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #decimal {
@@ -167,7 +195,8 @@ body {
     grid-row: 4;
     grid-column: 3;
     box-shadow: 5px 5px;
-
+    height: 1.5em;
+    border: solid black 3px;
 }
 
 #clear {
@@ -177,13 +206,39 @@ body {
     grid-row: 4;
     grid-column: 1;
     box-shadow: 5px 5px;
+    height: 1.5em;;
+    border: solid black 3px;
+}
 
-
+#Equals {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border: solid black 3px;
+    grid-row: 5;
+    grid-column: 1/5;
+    height: 2em;
+    box-shadow: 5px 5px;
 }
 
 #textbox {
     background-color: rgb(255, 255, 255);
-    border: solid black 2px;
+    border: solid black 3px;
     width: 100%;
+    height: 1.75em;
+    margin-bottom: 20px;
+}
+
+.calculatorHistory {
+
+    background-color: white;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30vw;
+    height: 75vh;
+    
+    overflow-y: scroll;
 }
 

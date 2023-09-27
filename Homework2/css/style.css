@@ -1,13 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
+
+
+
+
 body {
     background-color: rgb(31, 31, 44);
-    
+    font-family: 'Martian Mono', monospace;
+    font-weight: bolder;
 }
 
 
 .calculatorbody {
-    background-color: rgb(88, 21, 88);
+    /* background-color: rgb(88, 21, 88); */
+    
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
     height: 750px;
     width: 600px;
+}
+
+.keys {
+    
+    display: grid;
+    gap: 20px;
+
+}
+
+#zero {
+    display: flex;
+    background-color: white;
+    
+    justify-content: center;
+    align-items: center;
+    
+    grid-row: 4;
+    grid-column: 2;
+    box-shadow: 5px 5px;
+    
+}
+
+#one {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 3;
+    grid-column: 1;
+    box-shadow: 5px 5px;
+}
+
+#two {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 3;
+    grid-column: 2;
+    box-shadow: 5px 5px;
+}
+
+#three {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 3;
+    grid-column: 3;
+    box-shadow: 5px 5px;
+}
+
+#four {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 1;
+    box-shadow: 5px 5px;
+}
+
+#five {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 2;
+    box-shadow: 5px 5px;
+}
+
+#six {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 3;
+    box-shadow: 5px 5px;
+}
+
+#seven {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 1;
+    grid-column: 1;
+    box-shadow: 5px 5px;
+}
+
+#eight {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 1;
+    grid-column: 2;
+    box-shadow: 5px 5px;
+}
+
+#nine {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 1;
+    grid-column: 3;
+    box-shadow: 5px 5px;
+}
+
+#plussign {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 4;
+    grid-column: 4;
+    box-shadow: 5px 5px;
+
+}
+
+#minussign {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 3;
+    grid-column: 4;
+    box-shadow: 5px 5px;
+}
+
+#Xsign{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 4;
+    box-shadow: 5px 5px;
+
+}
+
+#slash {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 1;
+    grid-column: 4;
+    box-shadow: 5px 5px;
+
+}
+
+#decimal {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 4;
+    grid-column: 3;
+    box-shadow: 5px 5px;
+
+}
+
+#clear {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    grid-row: 4;
+    grid-column: 1;
+    box-shadow: 5px 5px;
+
 
 }
 
@@ -16,3 +186,4 @@ body {
     border: solid black 2px;
     width: 100%;
 }
+

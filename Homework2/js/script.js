@@ -1,5 +1,6 @@
 let textbox = "";
 let beforeOperator = true;
+let operatorCount = 0;
 
 let equation = {
     'firstValue': 0.0,
@@ -131,36 +132,150 @@ document.addEventListener('DOMContentLoaded', (e) => {
    document.addEventListener('DOMContentLoaded', (e) => {
     let btn = document.querySelector("#plussign");
     btn.addEventListener('click', (e) => {
-        textbox += "+";
+       
+
+        if (beforeOperator) {
+            equation.firstValue = parseFloat(textbox);
+            beforeOperator = false;
+            textbox= "";
+        }
         
+        
+        else if (!beforeOperator) {
+                
+            equation.secondValue = parseFloat(textbox);
+            beforeOperator = true;
+            textbox = evaluateEquation();
+                
+                
+
+                
+            item = document.createElement('li');
+            item.innerHTML = textbox;
+            document.querySelector("#historyList").appendChild(item);
+            equation.firstValue = equation.secondValue;
+            textbox = "";
+            document.querySelector("#textbox").innerHTML = textbox;
+
+                
+                
+        }
+           
+            
+        equation.operator = "+";
         document.querySelector("#textbox").innerHTML = textbox;
+        ++operatorCount;
     });
    });
 
    document.addEventListener('DOMContentLoaded', (e) => {
     let btn = document.querySelector("#minussign");
     btn.addEventListener('click', (e) => {
-        textbox += "-";
+        if (beforeOperator) {
+            equation.firstValue = parseFloat(textbox);
+            beforeOperator = false;
+            textbox= "";
+        }
         
+        
+        else if (!beforeOperator) {
+                
+            equation.secondValue = parseFloat(textbox);
+            beforeOperator = true;
+            textbox = evaluateEquation();
+                
+                
+
+                
+            item = document.createElement('li');
+            item.innerHTML = textbox;
+            document.querySelector("#historyList").appendChild(item);
+            equation.firstValue = equation.secondValue;
+            textbox = "";
+            document.querySelector("#textbox").innerHTML = textbox;
+
+                
+                
+        }
+           
+            
+        equation.operator = "-";
         document.querySelector("#textbox").innerHTML = textbox;
+        ++operatorCount;
     });
    });
 
    document.addEventListener('DOMContentLoaded', (e) => {
     let btn = document.querySelector("#Xsign");
     btn.addEventListener('click', (e) => {
-        textbox += "*";
+        if (beforeOperator) {
+            equation.firstValue = parseFloat(textbox);
+            beforeOperator = false;
+            textbox= "";
+        }
         
+        
+        else if (!beforeOperator) {
+                
+            equation.secondValue = parseFloat(textbox);
+            beforeOperator = true;
+            textbox = evaluateEquation();
+                
+                
+
+                
+            item = document.createElement('li');
+            item.innerHTML = textbox;
+            document.querySelector("#historyList").appendChild(item);
+            equation.firstValue = equation.secondValue;
+            textbox = "";
+            document.querySelector("#textbox").innerHTML = textbox;
+
+                
+                
+        }
+           
+            
+        equation.operator = "*";
         document.querySelector("#textbox").innerHTML = textbox;
+        ++operatorCount;
     });
    });
 
    document.addEventListener('DOMContentLoaded', (e) => {
     let btn = document.querySelector("#slash");
     btn.addEventListener('click', (e) => {
-        textbox += "/";
+        if (beforeOperator) {
+            equation.firstValue = parseFloat(textbox);
+            beforeOperator = false;
+            textbox= "";
+        }
         
+        
+        else if (!beforeOperator) {
+                
+            equation.secondValue = parseFloat(textbox);
+            beforeOperator = true;
+            textbox = evaluateEquation();
+                
+                
+
+                
+            item = document.createElement('li');
+            item.innerHTML = textbox;
+            document.querySelector("#historyList").appendChild(item);
+            equation.firstValue = equation.secondValue;
+            textbox = "";
+            document.querySelector("#textbox").innerHTML = textbox;
+
+                
+                
+        }
+           
+            
+        equation.operator = "/";
         document.querySelector("#textbox").innerHTML = textbox;
+        ++operatorCount;
     });
    });
 
@@ -169,6 +284,32 @@ document.addEventListener('DOMContentLoaded', (e) => {
     btn.addEventListener('click', (e) => {
         textbox = "";
         document.querySelector("#textbox").innerHTML = textbox;
+    });
+   });
+
+   document.addEventListener('DOMContentLoaded', (e) => {
+    let btn = document.querySelector("#Equals");
+    btn.addEventListener('click', (e) => {
+        if (!beforeOperator) {
+                    
+            equation.secondValue = parseFloat(textbox);
+            beforeOperator = true;
+            textbox = evaluateEquation();
+            
+            
+
+            
+            item = document.createElement('li');
+            item.innerHTML = textbox;
+            document.querySelector("#historyList").appendChild(item);
+            // textbox = "";
+            document.querySelector("#textbox").innerHTML = textbox;
+            
+        }
+        else if (beforeOperator) {
+            textbox = "error";
+            document.querySelector("#textbox").innerHTML = textbox;
+        }
     });
    });
 
@@ -194,20 +335,37 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     beforeOperator = false;
                     textbox= "";
                 }
-                // else if (!beforeOperator) {
-                //     equation.secondValue = parseInt(textbox);
-                //     beforeOperator = true;
-                // }
                 
+                
+                else if (!beforeOperator) {
+                        
+                    equation.secondValue = parseFloat(textbox);
+                    beforeOperator = true;
+                    textbox = evaluateEquation();
+                        
+                        
+    
+                        
+                    item = document.createElement('li');
+                    item.innerHTML = textbox;
+                    document.querySelector("#historyList").appendChild(item);
+                    equation.firstValue = equation.secondValue;
+                    textbox = "";
+                    document.querySelector("#textbox").innerHTML = textbox;
+
+                        
+                        
+                }
+                   
+                    
                 equation.operator = e.key;
                 document.querySelector("#textbox").innerHTML = textbox;
+                ++operatorCount;
             }
             else if (e.key == "Enter") {
                 if (!beforeOperator) {
                     
                     equation.secondValue = parseFloat(textbox);
-                    console.log(equation.firstValue);
-                    console.log(equation.secondValue);
                     beforeOperator = true;
                     textbox = evaluateEquation();
                     
@@ -217,7 +375,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     item = document.createElement('li');
                     item.innerHTML = textbox;
                     document.querySelector("#historyList").appendChild(item);
-                    textbox = "";
+                    
                     document.querySelector("#textbox").innerHTML = textbox;
                     
                 }
@@ -225,11 +383,16 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     textbox = "error";
                     document.querySelector("#textbox").innerHTML = textbox;
                 }
+                
+
+
             }
             else if (!isNaN(isDigit) || e.key==".") {
+                
                 textbox += e.key;
                 
                 document.querySelector("#textbox").innerHTML = textbox;
+   
             }
         }
     })

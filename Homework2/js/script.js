@@ -2,8 +2,8 @@ let textbox = "";
 let beforeOperator = true;
 
 let equation = {
-    'firstValue': 0,
-    'secondValue': 0,
+    'firstValue': 0.0,
+    'secondValue': 0.0,
     operator: 'notset'
 };
 
@@ -18,6 +18,12 @@ function evaluateEquation() {
     if (equation.operator == "*") {
         return equation.firstValue * equation.secondValue;
     }
+    if (equation.operator == "X") {
+        return equation.firstValue * equation.secondValue;
+    }
+    if (equation.operator == "x") {
+        return equation.firstValue * equation.secondValue;
+    }
     if (equation.operator == "/") {
         return equation.firstValue / equation.secondValue;
     }
@@ -25,10 +31,6 @@ function evaluateEquation() {
 document.addEventListener('DOMContentLoaded', (e) => {
     let btn = document.querySelector("#zero");
     btn.addEventListener('click', (e) => {
-        // const textnode = document.createTextNode("0");
-        
-
-        // document.querySelector("#textbox").appendChild(textnode);
         textbox += "0";
         
         document.querySelector("#textbox").innerHTML = textbox;
@@ -171,57 +173,63 @@ document.addEventListener('DOMContentLoaded', (e) => {
    });
 
    document.addEventListener('DOMContentLoaded', (e) => {
+    let btn = document.querySelector("#clearHistory");
+    btn.addEventListener('click', (e) => {
+        document.querySelector("#historyList").innerHTML = "";
+    });
+   });
+
+   document.addEventListener('DOMContentLoaded', (e) => {
     document.addEventListener('keydown', (e) => {
         if (e.key == "Backspace") {
+            textbox = textbox.toString();
             textbox = textbox.substring(0, textbox.length - 1);
             document.querySelector("#textbox").innerHTML = textbox;
         }
         else {
-            const isDigit = parseInt(e.key);
-            if (e.key == "+" || e.key=="-" || e.key=="/" ||  e.key==".") {                
+            const isDigit = parseFloat(e.key);
+            if (e.key == "+" || e.key=="-" || e.key=="/" ||  e.key=="*" || e.key=="x" || e.key=="X") {                
                 if (beforeOperator) {
-                    equation.firstValue = parseInt(textbox);
+                    equation.firstValue = parseFloat(textbox);
                     beforeOperator = false;
                     textbox= "";
                 }
-                else if (!beforeOperator) {
-                    equation.secondValue = parseInt(textbox);
-                    beforeOperator = true;
-                }
-                textbox += e.key;
+                // else if (!beforeOperator) {
+                //     equation.secondValue = parseInt(textbox);
+                //     beforeOperator = true;
+                // }
+                
                 equation.operator = e.key;
                 document.querySelector("#textbox").innerHTML = textbox;
             }
             else if (e.key == "Enter") {
                 if (!beforeOperator) {
-                    textbox = textbox.substring(1, textbox.length);
-                    equation.secondValue = parseInt(textbox);
+                    
+                    equation.secondValue = parseFloat(textbox);
                     console.log(equation.firstValue);
                     console.log(equation.secondValue);
                     beforeOperator = true;
                     textbox = evaluateEquation();
+                    
+                    
+
+                    
+                    item = document.createElement('li');
+                    item.innerHTML = textbox;
+                    document.querySelector("#historyList").appendChild(item);
+                    textbox = "";
+                    document.querySelector("#textbox").innerHTML = textbox;
+                    
+                }
+                else if (beforeOperator) {
+                    textbox = "error";
                     document.querySelector("#textbox").innerHTML = textbox;
                 }
             }
-            else if (!isNaN(isDigit)) {
+            else if (!isNaN(isDigit) || e.key==".") {
                 textbox += e.key;
                 
                 document.querySelector("#textbox").innerHTML = textbox;
-            }
-            else if(e.key == "*" || e.key == "x" || e.key == "X") {
-                if (beforeOperator) {
-                    equation.firstValue = parseInt(textbox);
-                    beforeOperator = false;
-                    textbox= "";
-                }
-                else if (!beforeOperator) {
-                    equation.secondValue = parseInt(textbox);
-                    beforeOperator = true;
-                }
-                textbox += "*";
-                equation.operator = "*";
-                document.querySelector("#textbox").innerHTML = textbox;
-                
             }
         }
     })

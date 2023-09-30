@@ -1,6 +1,6 @@
 let textbox = "";
 let beforeOperator = true;
-let operatorCount = 0;
+
 
 let equation = {
     'firstValue': 0.0,

@@ -28,6 +28,17 @@ h3 {
     display: flex;
 }
 
+.emailandphone {
+    display: flex;
+}
+
+.cardtypeandnumber {
+    display: flex;
+}
+
+.expirationCCVamount {
+    display: flex;
+}
 
 #browse {
     box-shadow: 4px 4px;

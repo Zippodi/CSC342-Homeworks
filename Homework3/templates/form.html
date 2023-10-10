@@ -9,29 +9,100 @@
 
 <body>
   <div class="SenderDetails">
+    <h3>
+        Sender Details
+    </h3>
     <img>
-    <form action="/formdata" method="get">
+    <form method="get">
         <input type="text" name="image">
-        <input type="submit" value="Image">
+        <input type="submit" value="Browse" id="browse">
     </form>
-    <label for="firstName">First Name:</label>
-    <form action="/formdata" method="get">
+    <div class="firstandlastname">
+        <label for="firstName">First Name:</label>
+        <form method="get">
         <input type="text" name="firstName">
-        <input type="submit">
-    </form>
-    <label for="lastName">Last Name:</label>
-    <form action="/formdata" method="get">
+        </form>
+        <label for="lastName">Last Name:</label>
+        <form  method="get">
         <input type="text" name="lastName">
-        <input type="submit">
     </form>
+    </div>
+    
 
   </div>
-  <div class="RecepientDetails">
-
+  <div class="RecipientDetails">
+    <h3>
+        Recipient Details
+    </h3>
+    <div class="firstandlastname2">
+        <label for="firstName2">First Name:</label>
+        <form method="get">
+            <input type="text" name="firstName2">
+        </form>
+        <label for="lastName2">Last Name:</label>
+        <form method="get">
+            <input type="text" name="lastName2">
+        </form>
+    </div>
+        <label for="message">Message</label>
+    <form method="get">
+        <input type="text" name="message" id="message">
+    </form>
+    <label for="notify">Notify Recipient:</label>
+    <form method="get" name="notify">
+        <input type="radio" name="email">
+        <label for="email">Email</label>
+        <input type="radio" name="SMS">
+        <label for="SMS">SMS</label>
+        <input type="radio" name="DoNotNotify">
+        <label for="DoNotNotify">Do Not Notify</label>
+    </form>
+    <label for="emailtext">Email:</label>
+    <form method="get">
+        <input type="text" name="emailtext">
+    </form>
+    <label for="phonenumber">Phone Number:</label>
+    <form method="get">
+        <input type="text" name="phonenumber">
+    </form>
   </div>
   <div class="PaymentDetails">
+    <h3>
+        Payment Details
+    </h3>
+    <label for="CardType">Card Type:</label>
+    <input list="card-types" name="CardType" />
 
+    <datalist id="card-types">
+        <option value="Visa"></option>
+        <option value="MasterCard"></option>
+        <option value="American Express"></option>
+    </datalist>
+
+    
+    <form method="get">
+        <label for="cardnumber">Card Number:</label>
+        <input type="text" name="cardnumber">
+    </form>
+    <label for="Expiration">Expiration:</label>
+    <input type="date" id="Expiration" name="Expiration"/>
+
+    <form method="get">
+        <label for="ccv">CCV:</label>
+        <input type="text" name="ccv">
+    </form>
+
+    <form method="get">
+        <label for="amount">Amount ($):</label>
+        <input type="text" name="amount">
+    </form>
+
+    <input type="checkbox" id="termsandconditions" name="termsandconditions" />
+    <label for="termsandconditions">I agree to the terms and conditions</label>
   </div>
+  <button id="Send">
+    Send
+  </button>
 </body>
 
 </html>

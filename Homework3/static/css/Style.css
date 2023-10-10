@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(62, 35, 78);
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+    font-size: larger;
+}
+
+.SenderDetails {
+    color: white;
+
+}
+
+.RecipientDetails {
+    color: white;
+}
+
+.PaymentDetails {
+    color: white;
+}
+
+.firstandlastname {
+    display: flex;
+}
+
+.firstandlastname2 {
+    display: flex;
+}
+
+
+#browse {
+    box-shadow: 4px 4px;
+}
+
+#Send {
+    background-color: rgb(88, 157, 88);
+    box-shadow: 4px 4px;
+    font-weight: bold;
+}

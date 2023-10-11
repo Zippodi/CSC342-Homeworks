@@ -16,12 +16,10 @@
             Sender Details
           </h3>  
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             First Name: 
             <input type="text" id="firstname" name="firstname" required>
           </label>
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             Last Name: 
             <input type="text" id="lastname" name="lastname" required>
           </label>
@@ -29,23 +27,19 @@
             Recipient Details
           </h3>
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             First Name: 
             <input type="text" id="firstname2" name="firstname2" required>
           </label>
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             Last Name: 
             <input type="text" id="lastname2" name="lastname2" required>
           </label>
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             <br>Message:<br> 
             <input type="text" id="message" name="message" required minlength="10">
           </label>
           
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             <br>Notify Recipient:<br> 
             <form method="get" name="notify">
                 <input type="radio" name="email">
@@ -57,7 +51,6 @@
           </label>
 
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             <br>Email:
             <input type="email" id="email" name="email" required>
           </label>
@@ -81,7 +74,6 @@
           </label>
 
           <label>
-            <!-- Name (can only be "Mary" or "Stu"):<br> -->
             Card Number: 
             <input type="text" id="cardNumber" name="cardNumber" required pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}">
           </label>
@@ -98,119 +90,19 @@
 
           <label>
             Amount ($):
-          <input type="number" id="CCV" name="CCV" required minlength="3" maxlength="4" />
+          <input type="text" id="amount" name="amount" required pattern="^\d*\.\d{2}$" />
           </label>
-         
-         
+         <label>
+            <br>
+            <input type="checkbox" id="termsandconditions" name="termsandconditions" required/>
+            I agree to the terms and conditions
+         </label>
+        <br>
+         <input type="submit" id="Send" value="Send">
         </div>
         
         
       </form>
-
-    
-  <!--  
-  <div class="SenderDetails">
-    <h3>
-        Sender Details
-    </h3>
-    <img>
-    <form method="get">
-        <input type="text" name="image">
-        <input type="submit" value="Browse" id="browse">
-    </form>
-    <div class="firstandlastname">
-        <label for="firstName">First Name:</label>
-        <form method="get">
-        <input type="text" name="firstName">
-        </form>
-        <label for="lastName">Last Name:</label>
-        <form  method="get">
-        <input type="text" name="lastName">
-    </form>
-    </div>
-    
-
-  </div>
-  <div class="RecipientDetails">
-    <h3>
-        Recipient Details
-    </h3>
-    <div class="firstandlastname2">
-        <label for="firstName2">First Name:</label>
-        <form method="get">
-            <input type="text" name="firstName2">
-        </form>
-        <label for="lastName2">Last Name:</label>
-        <form method="get">
-            <input type="text" name="lastName2">
-        </form>
-    </div>
-        <label for="message">Message</label>
-    <form method="get">
-        <input type="text" name="message" id="message">
-    </form>
-    <label for="notify">Notify Recipient:</label>
-    <form method="get" name="notify">
-        <input type="radio" name="email">
-        <label for="email">Email</label>
-        <input type="radio" name="SMS">
-        <label for="SMS">SMS</label>
-        <input type="radio" name="DoNotNotify">
-        <label for="DoNotNotify">Do Not Notify</label>
-    </form>
-    <div class="emailandphone">
-        <label for="emailtext">Email:</label>
-        <form method="get">
-            <input type="text" name="emailtext">
-        </form>
-        <label for="phonenumber">Phone Number:</label>
-        <form method="get">
-            <input type="text" name="phonenumber">
-        </form>
-    </div>
-    
-  </div>
-  <div class="PaymentDetails">
-    <h3>
-        Payment Details
-    </h3>
-    <div class="cardtypeandnumber">
-        <label for="CardType">Card Type:</label>
-        <input list="card-types" name="CardType" />
-
-        <datalist id="card-types">
-            <option value="Visa"></option>
-            <option value="MasterCard"></option>
-            <option value="American Express"></option>
-        </datalist>
-        <form method="get">
-            <label for="cardnumber">Card Number:</label>
-            <input type="text" name="cardnumber">
-        </form>
-    </div>
-    <div class="expirationCCVamount">
-        <label for="Expiration">Expiration:</label>
-        <input type="date" id="Expiration" name="Expiration"/>
-
-        <form method="get">
-            <label for="ccv">CCV:</label>
-            <input type="text" name="ccv">
-        </form>
-
-        <form method="get">
-            <label for="amount">Amount ($):</label>
-            <input type="text" name="amount">
-        </form>
-
-    </div>
-    
-    <input type="checkbox" id="termsandconditions" name="termsandconditions" />
-    <label for="termsandconditions">I agree to the terms and conditions</label>
-  </div>
-  <button id="Send">
-    Send
-  </button>
-    -->
 </body>
 
 </html>

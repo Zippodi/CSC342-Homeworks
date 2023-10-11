@@ -8,6 +8,107 @@
 </head>
 
 <body>
+
+    <form class="mainForm" method="post" target="resultFrame" action="formdata" enctype="multipart/form-data">
+        
+        <div class="inputs">
+          <h3>
+            Sender Details
+          </h3>  
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            First Name: 
+            <input type="text" id="firstname" name="firstname" required>
+          </label>
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            Last Name: 
+            <input type="text" id="lastname" name="lastname" required>
+          </label>
+          <h3>
+            Recipient Details
+          </h3>
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            First Name: 
+            <input type="text" id="firstname2" name="firstname2" required>
+          </label>
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            Last Name: 
+            <input type="text" id="lastname2" name="lastname2" required>
+          </label>
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            <br>Message:<br> 
+            <input type="text" id="message" name="message" required minlength="10">
+          </label>
+          
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            <br>Notify Recipient:<br> 
+            <form method="get" name="notify">
+                <input type="radio" name="email">
+                <label for="email">Email</label>
+                <input type="radio" name="SMS">
+                <label for="SMS">SMS</label>
+                <input type="radio" name="DoNotNotify">
+                <label for="DoNotNotify">Do Not Notify</label>
+          </label>
+
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            <br>Email:
+            <input type="email" id="email" name="email" required>
+          </label>
+          <label>
+            Phone Number: 
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+          </label>
+
+          <h3>
+            Payment Details
+          </h3>
+          <label>
+            Card Type:<br> 
+            <input list="card-types" name="CardType" />
+
+            <datalist id="card-types">
+                <option value="Visa"></option>
+                <option value="MasterCard"></option>
+                <option value="American Express"></option>
+            </datalist>   
+          </label>
+
+          <label>
+            <!-- Name (can only be "Mary" or "Stu"):<br> -->
+            Card Number: 
+            <input type="text" id="cardNumber" name="cardNumber" required pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}">
+          </label>
+
+          <label>
+            <br>Expiration:
+          <input type="date" id="Expiration" name="Expiration"/>
+          </label>
+
+          <label>
+            CCV:
+          <input type="password" id="CCV" name="CCV" required minlength="3" maxlength="4" />
+          </label>
+
+          <label>
+            Amount ($):
+          <input type="number" id="CCV" name="CCV" required minlength="3" maxlength="4" />
+          </label>
+         
+         
+        </div>
+        
+        
+      </form>
+
+    
+  <!--  
   <div class="SenderDetails">
     <h3>
         Sender Details
@@ -109,6 +210,7 @@
   <button id="Send">
     Send
   </button>
+    -->
 </body>
 
 </html>

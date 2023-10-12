@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('/', (req, res) => {
     res.sendFile(html_path + 'form.html');
   });
-
+  
   app.post('/formdata', upload.single('myfile'), (req, res) => {
     console.log(req.body);
   
@@ -70,16 +70,18 @@ app.get('/', (req, res) => {
       if (req.body.termsandconditions != "on") {
         throw new Error("Must accept terms and conditions.");
       }
-      if (res.body.firstname2 == "Stuart" && res.body.lastname2 == "Dent") {
+      if (req.body.firstname2 == "Stuart" && req.body.lastname2 == "Dent") {
         throw new Error("STUART!!!!!!");
       }
-      if (res.body.firstname2 == "Stu" && res.body.lastname2 == "Dent") {
+      if (req.body.firstname2 == "Stu" && req.body.lastname2 == "Dent") {
         throw new Error("STUART!!!!!!");
       }
-      res.send(req.body);
+      // res.send(req.body);
+      res.sendFile(html_path + "success.html");
     }
     catch(err) {
       res.sendFile(html_path + "error.html");
+      //res.send(req.body);
       // res.send("Validation Failed. " + err);
     }
   });

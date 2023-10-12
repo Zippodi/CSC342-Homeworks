@@ -70,11 +70,17 @@ app.get('/', (req, res) => {
       if (req.body.termsandconditions != "on") {
         throw new Error("Must accept terms and conditions.");
       }
-      
+      if (res.body.firstname2 == "Stuart" && res.body.lastname2 == "Dent") {
+        throw new Error("STUART!!!!!!");
+      }
+      if (res.body.firstname2 == "Stu" && res.body.lastname2 == "Dent") {
+        throw new Error("STUART!!!!!!");
+      }
       res.send(req.body);
     }
     catch(err) {
-      res.send("Validation Failed. " + err);
+      res.sendFile(html_path + "error.html");
+      // res.send("Validation Failed. " + err);
     }
   });
 

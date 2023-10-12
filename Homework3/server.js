@@ -5,6 +5,7 @@ const multer = require('multer');
 const upload = multer({dest: 'file_uploads/'});
 const html_path = __dirname + '/templates/'; // HTML files folder
 const date = new Date();
+let pattern = /\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d\d/i;
 app.use(express.static('static'));
 app.use(express.urlencoded({extended: true}));
 
@@ -35,6 +36,9 @@ app.get('/', (req, res) => {
       }
       if (req.body.cardNumber == "") {
         throw new Error("Card Number required.");
+      }
+      if (!pattern.test(req.body.cardNumber)) {
+        throw new Error("Card Number must fit format XXXX-XXXX-XXXX-XXXX");
       }
       if (req.body.Expiration == "") {
         throw new Error("Expiration Date required.");

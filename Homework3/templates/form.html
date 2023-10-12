@@ -15,6 +15,10 @@
           <h3>
             Sender Details
           </h3>  
+          <input type="text" name="input1">
+          
+          <input type="file" name="myfile" required>
+          <br>
           <label>
             First Name: 
             <input type="text" id="firstname" name="firstname" required>
@@ -41,18 +45,24 @@
           
           <label>
             <br>Notify Recipient:<br> 
-            <form method="get" name="notify">
-                <input type="radio" name="email">
-                <label for="email">Email</label>
-                <input type="radio" name="SMS">
-                <label for="SMS">SMS</label>
-                <input type="radio" name="DoNotNotify">
-                <label for="DoNotNotify">Do Not Notify</label>
+              <label>
+                <input type="radio" name="notify" value="email">
+                  Email
+              </label>
+              <label>
+                <input type="radio" name="notify" value="SMS">
+                SMS
+              </label>
+              <label>  
+              <input type="radio" name="notify" value="do not notify">
+                  Do Not Notify
+              </label>
+              
           </label>
 
           <label>
             <br>Email:
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email">
           </label>
           <label>
             Phone Number: 
@@ -64,7 +74,7 @@
           </h3>
           <label>
             Card Type:<br> 
-            <input list="card-types" name="CardType" />
+            <input list="card-types" name="CardType" required/>
 
             <datalist id="card-types">
                 <option value="Visa"></option>
@@ -80,7 +90,7 @@
 
           <label>
             <br>Expiration:
-          <input type="date" id="Expiration" name="Expiration"/>
+          <input type="date" id="Expiration" name="Expiration" required/>
           </label>
 
           <label>

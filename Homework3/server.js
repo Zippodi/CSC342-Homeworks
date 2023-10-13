@@ -1,13 +1,20 @@
 const express = require('express');
+const hbs = require('hbs')
 const app = express(); // Create a new server instance
 const PORT = 3000; // Port number we want to use of this server
 const multer = require('multer');
 const upload = multer({dest: 'file_uploads/'});
 const html_path = __dirname + '/templates/'; // HTML files folder
+
 const date = new Date();
 let pattern = /\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d\d/i;
+
+app.set('view engine', 'hbs')
+app.set('views', 'templates')
+
 app.use(express.static('static'));
 app.use(express.urlencoded({extended: true}));
+
 
 
 // Routes
@@ -77,8 +84,35 @@ app.get('/', (req, res) => {
       if (req.body.firstname2 == "Stu" && req.body.lastname2 == "Dent") {
         throw new Error("STUART!!!!!!");
       }
-      res.send(req.body);
-      res.sendFile(html_path + "success.html");
+      // res.send(req.body);
+      // res.sendFile(html_path + "success.html");
+      
+      let demo = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        firstname2: req.body.firstname2,
+        lastname2: req.body.lastname2,
+        amount: req.body.amount,
+        image: req.body.image,
+        message: req.body.message,
+        notify: ""
+    }
+    
+    if (req.body.notify == "email") {
+      demo.notify = "was notified via " + req.body.email; 
+      
+    
+    }
+    else if (req.body.notify == "SMS") {
+      demo.notify = "was notified via " + req.body.phone; 
+    }
+    else {
+      demo.notify = "was not notified of this"
+    }
+     
+      
+      res.render('success', { demo: demo });
+   
     }
     catch(err) {
       

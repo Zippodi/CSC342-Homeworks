@@ -10,7 +10,7 @@
 
 <body>
 
-    <form class="mainForm" method="post" target="resultFrame" action="formdata" enctype="multipart/form-data">
+    <form class="mainForm" method="post" target="resultFrame" action="send" enctype="multipart/form-data">
      
         
         <div class="inputs">
@@ -18,10 +18,11 @@
             Sender Details
           </h3>  
         
-          <input type="file" id="imageInput" name="myfile" required>
-          <br>
-          <!-- <img id="previewImage" alt="Preview" name="myfile"> -->
           <img id="previewImage" alt="Preview">
+          <br>
+          <input type="file" id="imageInput" name="myfile" accept="image/*" required>
+          
+          
          
           
           <br>
@@ -101,7 +102,7 @@
 
           <label>
             CCV:
-          <input type="password" id="CCV" name="CCV" required minlength="3" maxlength="4" />
+          <input type="password" id="CCV" name="CCV" required pattern="^[0-9]{3,4}$" />
           </label>
 
           <label>

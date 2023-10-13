@@ -17,16 +17,18 @@ app.use(express.urlencoded({extended: true}));
 const multer = require('multer');
 const upload = multer({dest: 'static/uploads/'});
 
+
 // Routes
 app.get('/', (req, res) => {
     res.sendFile(html_path + 'form.html');
   });
   
-  app.post('/formdata', upload.single('myfile'), (req, res) => {
-    // app.post('/Homework3/templates/success.html', upload.single('myfile'), (req, res) => {
-    console.log(req.body);
+  app.post('/send', upload.single('myfile'), (req, res) => {
   
     try {
+      if (req.file.mimetype != "image/png" && req.file.mimetype != "image/jpg" && req.file.mimetype != "image/jpeg") {
+        throw new Error("File input must be an image.");
+      }
       if(req.body.firstname == "" || req.body.lastname == "" || req.body.firstname2 == "" || req.body.lastname2 == "") {
         throw new Error("name fields must not be empty");
       }
@@ -69,6 +71,9 @@ app.get('/', (req, res) => {
       if (req.body.CCV.length < 3 || req.body.CCV.length > 4) {
         throw new Error("CCV can only be 3 or 4 digits.");
       }
+      if (isNaN(req.body.CCV)) {
+        throw new Error("CCV must be a number.");
+      }
       if (req.body.amount == "") {
         throw new Error("Amount required.");
       }
@@ -79,13 +84,11 @@ app.get('/', (req, res) => {
         throw new Error("Must accept terms and conditions.");
       }
       if (req.body.firstname2 == "Stuart" && req.body.lastname2 == "Dent") {
-        throw new Error("STUART!!!!!!");
+        throw new Error("Banned Recipient Name");
       }
       if (req.body.firstname2 == "Stu" && req.body.lastname2 == "Dent") {
-        throw new Error("STUART!!!!!!");
+        throw new Error("Banned Recipient Name");
       }
-      // res.send(req.body);
-      // res.sendFile(html_path + "success.html");
       
       let demo = {
         image: "",
@@ -98,8 +101,10 @@ app.get('/', (req, res) => {
         message: req.body.message,
         notify: ""
     }
-    demo.image = req.file.path;
-    console.log(demo.image);
+    let imagesource = req.file.path;
+    imagesource = imagesource.slice(7);
+    demo.image = imagesource;
+    
     
     if (req.body.notify == "email") {
       demo.notify = "was notified via " + req.body.email; 
@@ -118,10 +123,11 @@ app.get('/', (req, res) => {
    
     }
     catch(err) {
-      
-      res.sendFile(html_path + "error.html");
-      //res.send(req.body);
-      // res.send("Validation Failed. " + err);
+      let errorMessage = {
+        ermessage: err
+      }
+       
+      res.render('error', { errorMessage: errorMessage });
     }
   });
 

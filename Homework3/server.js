@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
   });
   
   app.post('/formdata', upload.single('myfile'), (req, res) => {
+    // app.post('/Homework3/templates/success.html', upload.single('myfile'), (req, res) => {
     console.log(req.body);
   
     try {
@@ -76,10 +77,11 @@ app.get('/', (req, res) => {
       if (req.body.firstname2 == "Stu" && req.body.lastname2 == "Dent") {
         throw new Error("STUART!!!!!!");
       }
-      // res.send(req.body);
+      res.send(req.body);
       res.sendFile(html_path + "success.html");
     }
     catch(err) {
+      
       res.sendFile(html_path + "error.html");
       //res.send(req.body);
       // res.send("Validation Failed. " + err);

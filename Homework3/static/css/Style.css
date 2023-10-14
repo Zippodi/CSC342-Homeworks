@@ -70,7 +70,8 @@ h3 {
 }
 
 .SenderDetails {
-    background-color: rgb(6, 30, 41);
+    /* background-color: rgb(6, 30, 41); */
+    background-color: #1c455c;
     display: flex;
     color: white;
     flex-direction: column;
@@ -79,12 +80,14 @@ h3 {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-
+    border-radius: 20px;
     
 }
 
 .RecipientDetails {
-    background-color: rgb(22, 132, 175);
+    /* background-color: rgb(22, 132, 175); */
+    background-color: #243ac9;
+
     display: flex;
     flex-direction: column;
     color: white;
@@ -94,6 +97,8 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    border-radius: 20px;
+
 }
 
 .PaymentDetails {
@@ -107,6 +112,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    border-radius: 20px;
 
 }
 

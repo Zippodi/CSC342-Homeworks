@@ -1,12 +1,10 @@
 FROM node:lts
 
-WORKDIR /app 
+WORKDIR /app
 
 COPY ./ ./
 
 RUN npm install
-
-COPY ./ ./
 
 CMD ["npm", "start"]
 

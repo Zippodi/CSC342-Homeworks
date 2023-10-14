@@ -22,8 +22,8 @@ services:
   hw3:
     restart: unless-stopped
     build: 
-      context: .
-      dockerfile: ./Homework3/Dockerfile
+      context: ./Homework3
+      dockerfile: Dockerfile
     volumes:
       - ./Homework3/static:/app/static
       - ./Homework3/server.js:/app/server.js

@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs')
 const app = express(); // Create a new server instance
-const PORT = 3000; // Port number we want to use of this server
+const PORT = 80; // Port number we want to use of this server
 
 const html_path = __dirname + '/templates/'; // HTML files folder
 

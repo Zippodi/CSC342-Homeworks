@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
   app.post('/send', upload.single('myfile'), (req, res) => {
   
     try {
-      if (req.file.mimetype != "image/png" && req.file.mimetype != "image/jpg" && req.file.mimetype != "image/jpeg") {
+      if (req.file.mimetype != "image/png" && req.file.mimetype != "image/jpg" && req.file.mimetype != "image/jpeg" && req.file.mimetype != "image/webp") {
         throw new Error("File input must be an image.");
       }
       if(req.body.firstname == "" || req.body.lastname == "" || req.body.firstname2 == "" || req.body.lastname2 == "") {

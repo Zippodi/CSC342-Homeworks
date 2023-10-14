@@ -1,10 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@600&family=Martian+Mono&display=swap');
+
+
 body {
     background-color: rgb(62, 35, 78);
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Martian Mono', monospace;
+}
+
+.titleinfo {
+    text-align: center;
+    color: white;
 }
 
 h3 {
     color: rgb(255, 255, 255);
-    font-size: larger;
+    font-size: 30px;
 }
 
 .SenderDetails {
@@ -48,5 +58,150 @@ h3 {
     background-color: rgb(88, 157, 88);
     box-shadow: 4px 4px;
     font-weight: bold;
-    /* width: 100px; */
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
 }
+
+.SenderDetails {
+    background-color: rgb(6, 30, 41);
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+}
+
+.RecipientDetails {
+    background-color: rgb(22, 132, 175);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.PaymentDetails {
+    background-color: rgb(34, 10, 141);
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+
+}
+
+
+#imageInput {
+    width: fit-content;
+    font-size: 20px;
+}
+
+label {
+    width:200px;
+    display: inline-block;
+}
+
+#firstname {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#lastname {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#firstname2 {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#lastname2 {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#message {
+    width: 500px;
+    height: 175px;
+    font-size: 20px;
+    overflow-y: scroll;
+}
+
+#notifyemail {
+    margin-top: 10px;
+}
+
+#notifysms {
+    margin-top: 10px;
+}
+
+#notifydont {
+    margin-top: 10px;
+}
+
+#email {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#phone {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#cardtype {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#cardNumber {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#Expiration {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#CCV {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#amount {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#termsandconditions {
+    width: fit-content;
+    font-size: 20px;
+}
+
+#previewImage {
+    max-width: 400px;
+    max-height: 400px;
+}
+

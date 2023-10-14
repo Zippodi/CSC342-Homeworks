@@ -9,16 +9,24 @@
 </head>
 
 <body>
-
+    <div class="titleinfo">
+      <h1>
+        Pay Your Friends
+      </h1>
+      <h2>
+        Fill out the form below with accurate information so that you can send some money to your friend!
+      </h2>
+    </div>
+    
     <form class="mainForm" method="post" target="resultFrame" action="send" enctype="multipart/form-data">
      
         
-        <div class="inputs">
+        <div class="SenderDetails">
           <h3>
             Sender Details
           </h3>  
         
-          <img id="previewImage" alt="Preview">
+          <img id="previewImage" alt="Insert Image File to Preview Here!">
           <br>
           <input type="file" id="imageInput" name="myfile" accept="image/*" required>
           
@@ -34,6 +42,10 @@
             Last Name: 
             <input type="text" id="lastname" name="lastname" required>
           </label>
+        </div>  
+        <div class="RecipientDetails">
+
+        
           <h3>
             Recipient Details
           </h3>
@@ -47,21 +59,22 @@
           </label>
           <label>
             <br>Message:<br> 
-            <input type="text" id="message" name="message" required minlength="10">
+            <!-- <input type="text" id="message" name="message" required minlength="10"> -->
+            <textarea id="message" name="message" required minlength="10"></textarea>
           </label>
           
           <label>
             <br>Notify Recipient:<br> 
               <label>
-                <input type="radio" name="notify" value="email">
+                <input type="radio" name="notify" id="notifyemail" value="email">
                   Email
               </label>
               <label>
-                <input type="radio" name="notify" value="SMS">
+                <input type="radio" name="notify"  id="notifysms"value="SMS">
                 SMS
               </label>
               <label>  
-              <input type="radio" name="notify" value="do not notify">
+              <input type="radio" name="notify" id="notifydont" value="do not notify">
                   Do Not Notify
               </label>
               
@@ -75,13 +88,16 @@
             Phone Number: 
             <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
           </label>
+        </div>
+        <div class="PaymentDetails">
 
+        
           <h3>
             Payment Details
           </h3>
           <label>
             Card Type:<br> 
-            <input list="card-types" name="CardType" required/>
+            <input list="card-types" id ="cardtype" name="CardType" required/>
 
             <datalist id="card-types">
                 <option value="Visa"></option>
@@ -109,14 +125,15 @@
             Amount ($):
           <input type="text" id="amount" name="amount" required pattern="^\d*\.\d{2}$" />
           </label>
-         <label>
+         <label id="ermsandconditionslabel">
             <br>
             <input type="checkbox" id="termsandconditions" name="termsandconditions" required/>
             I agree to the terms and conditions
          </label>
         <br>
+      </div>
          <input type="submit" id="Send" value="Send">
-        </div>
+        
         
         
       </form>

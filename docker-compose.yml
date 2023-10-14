@@ -20,8 +20,10 @@ services:
       - ./Homework2:/usr/local/apache2/htdocs
   
   hw3:
-    image: node:lts
     restart: unless-stopped
+    build: 
+      context: .
+      dockerfile: ./Homework3/Dockerfile
     volumes:
       - ./Homework3/static:/app/static
       - ./Homework3/server.js:/app/server.js

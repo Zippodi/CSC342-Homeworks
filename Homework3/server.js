@@ -83,10 +83,10 @@ app.get('/', (req, res) => {
       if (req.body.termsandconditions != "on") {
         throw new Error("Must accept terms and conditions.");
       }
-      if (req.body.firstname2 == "Stuart" && req.body.lastname2 == "Dent") {
+      if (req.body.firstname2.toUpperCase() == "STUART" && req.body.lastname2.toUpperCase() == "DENT") {
         throw new Error("Banned Recipient Name");
       }
-      if (req.body.firstname2 == "Stu" && req.body.lastname2 == "Dent") {
+      if (req.body.firstname2.toUpperCase() == "STU" && req.body.lastname2.toUpperCase() == "DENT") {
         throw new Error("Banned Recipient Name");
       }
       

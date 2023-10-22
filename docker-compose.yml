@@ -31,4 +31,16 @@ services:
     environment:
       - PORT=80
 
+  hw4:
+    restart: unless-stopped
+    build: 
+      context: ./Homework4
+      dockerfile: Dockerfile
+    volumes:
+      - ./Homework4/static:/app/static
+      - ./Homework4/server.js:/app/server.js
+      - ./Homework4/package.json:/app/package.json
+    environment:
+      - PORT=80
+
       

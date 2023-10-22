@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             
         equation.operator = "+";
         document.querySelector("#textbox").innerHTML = textbox;
-        ++operatorCount;
+        //++operatorCount;
     });
    });
 
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             
         equation.operator = "-";
         document.querySelector("#textbox").innerHTML = textbox;
-        ++operatorCount;
+        //++operatorCount;
     });
    });
 
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             
         equation.operator = "*";
         document.querySelector("#textbox").innerHTML = textbox;
-        ++operatorCount;
+       // ++operatorCount;
     });
    });
 
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             
         equation.operator = "/";
         document.querySelector("#textbox").innerHTML = textbox;
-        ++operatorCount;
+        //++operatorCount;
     });
    });
 
@@ -360,12 +360,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     
                 equation.operator = e.key;
                 document.querySelector("#textbox").innerHTML = textbox;
-                ++operatorCount;
+                //++operatorCount;
             }
             else if (e.key == "Enter") {
                 if (!beforeOperator) {
                     
                     equation.secondValue = parseFloat(textbox);
+                    let mah = parseFloat("+100");
+                    let bah = parseFloat("11");
+                    console.log(mah + bah);
                     beforeOperator = true;
                     textbox = evaluateEquation();
                     
@@ -397,3 +400,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }
     })
    });
+
+
+
+  

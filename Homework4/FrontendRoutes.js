@@ -8,5 +8,9 @@ router.get('/', (req, res) => {
   res.sendFile(`${html_dir}index.html`);
 });
 
+router.get('/login', (req, res) => {
+  res.sendFile(`${html_dir}login.html`);
+});
+
 
 module.exports = router;

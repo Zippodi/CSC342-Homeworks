@@ -9,9 +9,13 @@ let authenticatedUser  = {
   userId: ""
 }
 
-// router.get('/api/howls', (req, res) => {
-//   res.json(howls);
-// });
+
+let howlId = 101;
+router.use(express.json());
+
+router.get('/api/howls', (req, res) => {
+  res.json(howls);
+});
 
 // router.get('/api/follows', (req, res) => {
 //   res.json(followers);
@@ -44,10 +48,27 @@ router.get('/api/authenticate/:username', (req, res) => {
 //the given username if they are authenticated.
 router.get('/api/authenticated/:username', (req, res) => {
   let username = req.params.username;
-  if (!authenticatedUser) {
+  if (!authenticatedUser || authenticatedUser.username != username) {
     res.status(404).json({error: "Not logged in."});
   }
-  console.log(authenticatedUser);
+  else {
+    let user = users.find(item => {
+
+      return item.username == username && item.username == authenticatedUser.username;
+    });
+    if(!user) {
+      res.status(404).json({error: "Not Found or Not Logged In"});
+    }
+    else {
+      res.json(user);
+    }
+  }
+  
+});
+
+//Returns list of howls made by user with userId
+router.get('/api/howls/:username', (req, res) => {
+  let username = req.params.username;
   let user = users.find(item => {
 
     return item.username == username && item.username == authenticatedUser.username;
@@ -56,34 +77,34 @@ router.get('/api/authenticated/:username', (req, res) => {
     res.status(404).json({error: "Not Found"});
   }
   else {
-    res.json(user);
+    let howlList = howls.filter((item) => item.userId == user.id);
+    res.json(howlList);
   }
-});
-
-//Returns list of howls made by user with userId
-router.get('/api/howls/:userId', (req, res) => {
-  let userId = req.params.userId;
-  let howlList = howls.filter((item) => item.userId == userId);
+  
 
 
-  res.json(howlList);
+  
 });
 
 
 //Make a Howl
 router.post('/api/howls', (req, res) => {
   let newHowl = req.body;
+  newHowl.id = howlId;
+  ++howlId;
   howls.push(newHowl);
+  
+  
   res.json(newHowl);
 });
 
 //Returns the information about the user
 //if they exist
-router.get('/api/users/:username', (req, res) => {
+router.get('/api/getuser/:username', (req, res) => {
   let username = req.params.username;
   let user = users.find(item => {
 
-    return item.username == username && item.username == authenticatedUser;
+    return item.username == username;
   });
   if(!user) {
     res.status(404).json({error: "Not Found"});
@@ -94,41 +115,81 @@ router.get('/api/users/:username', (req, res) => {
 });
 
 //Returns the list of users that a user follows.
-router.get('/api/follows/:userId', (req, res) => {
-  let userId = req.params.userId;
-  let userFollows = followers[userId].following;
-  if(!userFollows) {
+router.get('/api/follows/:username', (req, res) => {
+  let username = req.params.username;
+  let user = users.find(item => {
+
+    return item.username == username;
+  });
+  if(!user) {
     res.status(404).json({error: "Not Found"});
   }
   else {
-    res.json(userFollows);
+    let userFollows = followers[user.id].following;
+    if(!userFollows) {
+     res.status(404).json({error: "Not Found"});
+    }
+    else {
+      res.json(userFollows);
+    }
   }
+  
 });
 
 //Follow a user.
-router.post('/api/follow/:userId', (req, res) => {
-  let userId = req.params.userId;
-  if(!followers[authenticatedUser.userId]) {
+router.post('/api/follow/:username', (req, res) => {
+  let username = req.params.username;
+  if(followers[authenticatedUser.userId] == undefined) {
     res.status(404).json({error: "Not Found"});
   }
+  
   else {
-    followers[authenticatedUser.userId].following.push(userId);
-    console.log(followers(authenticatedUser.userId));
+    let user = users.find(item => {
+
+      return item.username == username;
+    });
+    if(!user) {
+      res.status(404).json({error: "Not Found"});
+    }
+    else {
+      followers[authenticatedUser.userId].following.push(parseInt(user.id));
+
+    res.json(followers[authenticatedUser.userId]);
+    }
+    
   }
   
   
 });
 
 //Follow a user.
-router.delete('/api/unfollow/:userId', (req, res) => {
-  let userId = req.params.userId;
-  if(!followers[authenticatedUser.userId]) {
+router.delete('/api/unfollow/:username', (req, res) => {
+  let username = req.params.username;
+  if(followers[authenticatedUser.userId] == undefined) {
     res.status(404).json({error: "Not Found"});
-
   }
+  
   else {
-    let index = followers[authenticatedUser.userId].following.indexOf(userId);
-    followers[authenticatedUser.userId].following.slice(index, 1);
+    let user = users.find(item => {
+
+      return item.username == username;
+    });
+    if(!user) {
+      res.status(404).json({error: "Not Found"});
+    }
+    else {
+      let index = followers[authenticatedUser.userId].following.indexOf(parseInt(user.id));
+      if (index > -1) {
+        followers[authenticatedUser.userId].following.splice(index, 1);
+
+        res.json(followers[authenticatedUser.userId]);
+      }
+      else {
+        res.status(404).json({error: "Not Found"});
+      }
+      
+    }
+    
   }
   
   

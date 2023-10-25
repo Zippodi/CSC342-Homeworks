@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
   res.sendFile(`${html_dir}login.html`);
 });
 
-router.get('/login', (req, res) => {
-  res.sendFile(`${html_dir}login.html`);
+router.get('/howler', (req, res) => {
+  res.sendFile(`${html_dir}index.html`);
 });
 
 

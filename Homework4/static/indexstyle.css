@@ -36,14 +36,15 @@ body {
 }
 
 
-
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
-  'wght' 400,
+  'wght' 600,
   'GRAD' 0,
-  'opsz' 24
+  'opsz' 60;
+  font-size: 100%;
 }
+
 
 /* #Username {
     position: fixed;

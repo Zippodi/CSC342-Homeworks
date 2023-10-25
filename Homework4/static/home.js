@@ -1,7 +1,9 @@
 import api from './APIClient.js';
 
 
-const loggedInUser = localStorage.getItem('loggedUser');
+const loggedInUser = localStorage.getItem('user');
 const username = document.querySelector('#Username');
-username.innerHTML = loggedInUser.username;
-console.log(loggedInUser);
+// username.innerHTML = loggedInUser.username;
+username.innerHTML = loggedInUser;
+
+console.log(loggedInUser.username);

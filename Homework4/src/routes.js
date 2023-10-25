@@ -11,23 +11,27 @@ let authenticatedUser  = {
 }
 
 
+
+
+
 let howlId = 101;
 router.use(express.json());
 
 
 //Checks if the user with the username exists,
 //and if they do, authenticate them.
-router.get('/api/authenticate/:username', (req, res) => {
-  let username = req.params.username;
+router.post('/api/authenticate/:username', (req, res) => {
+  let username = req.body.username;
   let user = users.find(item => {
     return item.username == username;
   });
   if(!user) {
-    res.status(404).json({error: "Not Found"});
+    res.status(401).json({error: 'Not authenticated'});
   }
   else {
-    authenticatedUser.username = user.username;
-    authenticatedUser.userId = user.id;
+    // authenticatedUser.username = user.username;
+    // authenticatedUser.userId = user.id;
+    // localStorage.setItem('loggedUser', user.username);
     res.json(user);
   }
 });
@@ -43,7 +47,9 @@ router.get('/api/authenticated/:username', (req, res) => {
   else {
     let user = users.find(item => {
 
-      return item.username == username && item.username == authenticatedUser.username;
+      // return item.username == username && item.username == authenticatedUser.username;
+      return item.username == username && item.username == localStorage.getItem('user').username;
+
     });
     if(!user) {
       res.status(404).json({error: "Not Found or Not Logged In"});

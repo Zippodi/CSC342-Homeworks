@@ -9,20 +9,6 @@ body {
 }
 
 
-
-/* #Title {
-    background-color: rgb(50, 48, 163);
-    color: white;
-    position: fixed;
-    
-}
-
-#Username {
-    position: fixed;
-    top: 0;
-    right: 70px;
-} */
-
 #Title {
     
     font-weight: bold;
@@ -46,10 +32,31 @@ body {
 }
 
 
-/* #Username {
-    position: fixed;
-    top: 10px;
-    right: 100px;
-} */
+#createHowlContainer {
+    background-color: rgb(28, 12, 83);
+    border-radius: 10px;
+}
 
+#howltextbox {
+    width: 90%;
+    height: 150px;
+    border-radius: 10px;
+    font-size: larger;
+    background-color: rgb(83, 97, 223); 
+    border-color: rgb(28, 12, 83);
+    color: white;
+}
+
+::placeholder {
+    color: white;
+    
+  }
+
+#HowlButton {
+    background-color: rgb(83, 97, 223); 
+    border-radius: 5px;
+    font-size: 200%;
+    color: white;
+    border-color: rgb(28, 12, 83);
+}
 

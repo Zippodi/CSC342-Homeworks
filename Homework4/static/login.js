@@ -9,7 +9,7 @@ buttonSelect.addEventListener('click', e => {
     document.location = "/howler";
   }).catch((err) => {
 
-    console.log("error");
+    alert("Not a Valid User.");
   });
   
 });

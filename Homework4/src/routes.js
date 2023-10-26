@@ -96,7 +96,7 @@ router.get('/api/getuser/:username', (req, res) => {
   let username = req.params.username;
   let user = users.find(item => {
 
-    return item.username == username;
+    return item.username === username;
   });
   if(!user) {
     res.status(404).json({error: "Not Found"});

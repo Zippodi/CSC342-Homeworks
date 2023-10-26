@@ -26,8 +26,53 @@ api.getFollows(user.username).then(followData => {
     for (let i = 0; i < array.length; i++) {
         api.getHowls(array[i]).then(howls => {
             
-            console.log(array[i]);
-            console.log(howls);
+            // console.log(array[i]);
+            api.getUser(array[i]).then(followed => {
+                for(let a = 0; a < howls.length; ++a) {
+                    const howl = document.createElement('div');
+                howl.className = "container";
+                const pic = document.createElement('img');
+                pic.src = followed.avatar;
+                howl.append(pic);
+                howl.append(followed.first_name);
+                howl.append(" ");
+                howl.append(followed.last_name);
+                howl.append(" @");
+                howl.append(followed.username);
+                howl.style.backgroundColor = "orange";
+                howl.style.color = "white";
+
+                let currentdate = new Date(); 
+                let month = (currentdate.getMonth()+1) + "/";
+                let day = currentdate.getDate();
+                day = day + ", ";
+                let hour = currentdate.getHours() + ":";
+                let minutes = currentdate.getMinutes() + "pm";
+                let postTime = month + day + hour + minutes;
+
+                const time = document.createElement('p');
+                time.className = "text-end";
+                time.innerHTML = postTime;
+                howl.append(time);
+                
+
+                const message = document.createElement('h2');
+                message.innerHTML = howls[a].text;
+                
+                message.className = "container py-5 text-break";
+                message.style.backgroundColor = "white";
+                message.style.color = "black";
+                howl.append(message);
+                
+                howlList.append(howl);
+                }
+              }).catch((err) => {
+            
+                alert("Not a Valid User.");
+              });
+            
+
+            
         
           }).catch((err) => {
         
@@ -73,7 +118,7 @@ howlButton.addEventListener('click', e => {
     message.style.backgroundColor = "white";
     message.style.color = "black";
     howl.append(message);
-    // howlList.append(message);
+    
     howlList.prepend(howl);
 
 });

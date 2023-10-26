@@ -26,7 +26,9 @@ api.getFollows(user.username).then(followData => {
     for (let i = 0; i < array.length; i++) {
         api.getHowls(array[i]).then(howls => {
             
-            // console.log(array[i]);
+            
+
+            
             api.getUser(array[i]).then(followed => {
                 for(let a = 0; a < howls.length; ++a) {
                     const howl = document.createElement('div');
@@ -79,6 +81,8 @@ api.getFollows(user.username).then(followData => {
             alert("Not a Valid User.");
           });
       }
+
+    //   console.log(allHowls);
   }
   
   

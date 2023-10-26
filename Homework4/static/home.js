@@ -19,7 +19,7 @@ const howlButton = document.querySelector('#HowlButton');
 howlButton.addEventListener('click', e => {
     const message = document.createElement('h2');
     message.innerHTML = howlBox.value;
-    message.className = "container-fluid py-5 text-break ";
+    message.className = "container-fluid py-5 text-break";
     message.style.backgroundColor = "white";
     howlList.append(message);
 

@@ -58,12 +58,12 @@ router.get('/api/authenticated/:username', (req, res) => {
   
 });
 
-//Returns list of howls made by user with userId
+//Returns list of howls made by a user
 router.get('/api/howls/:username', (req, res) => {
   let username = req.params.username;
   let user = users.find(item => {
 
-    return item.username == username && item.username == localStorage.getItem('user').username;
+    return item.username == username;
   });
   if(!user) {
     res.status(404).json({error: "Not Found"});
@@ -122,7 +122,18 @@ router.get('/api/follows/:username', (req, res) => {
      res.status(404).json({error: "Not Found"});
     }
     else {
-      res.json(userFollows);
+      let follows = [];
+
+      for (i=0; i<userFollows.length; i++) {
+        // let users.find(userFollowed => userFollows[i] == userFollowed.id);
+        let userFollowed = users.find(item => {
+
+          return item.id == userFollows[i];
+        });
+        follows.push(userFollowed.username);
+      }
+      
+      res.json(follows);
     }
   }
   

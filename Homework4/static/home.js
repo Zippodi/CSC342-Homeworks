@@ -12,8 +12,32 @@ username.innerHTML = user.username;
 profilePicture.src = user.avatar;
 
 
+api.getFollows(user.username).then(followData => {
+    // console.log(followData);
+    getHowlsFromFollowers(followData);
 
+  }).catch((err) => {
 
+    alert("Not a Valid User.");
+  });
+  
+
+  function getHowlsFromFollowers(array) {
+    for (let i = 0; i < array.length; i++) {
+        api.getHowls(array[i]).then(howls => {
+            
+            console.log(array[i]);
+            console.log(howls);
+        
+          }).catch((err) => {
+        
+            alert("Not a Valid User.");
+          });
+      }
+  }
+  
+  
+  
 const howlButton = document.querySelector('#HowlButton');
 howlButton.addEventListener('click', e => {
     const howl = document.createElement('div');
@@ -50,6 +74,16 @@ howlButton.addEventListener('click', e => {
     message.style.color = "black";
     howl.append(message);
     // howlList.append(message);
-    howlList.append(howl);
+    howlList.prepend(howl);
 
 });
+
+const sorter = (a, b) => {
+    if(a.name === selfName){
+       return -1;
+    };
+    if(b.name === selfName){
+       return 1;
+    };
+    return a.name < b.name ? -1 : 1;
+ };

@@ -67,6 +67,20 @@ class HTTPClient {
         // console.log("From the server:", howls);
         return howls;
       });
+    },
+
+    getFollowedHowls: (username) => {
+      return HTTPClient.get(`/api/followedHowls/${username}`).then(howls => {
+        console.log("From the server:", howls);
+        return howls;
+      });
+    },
+
+    getUserById: (id) => {
+      return HTTPClient.get(`/api/users/${id}`).then(user => {
+        console.log("From the server:", user);
+        return user;
+      });
     }
 
     

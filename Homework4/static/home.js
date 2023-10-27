@@ -12,94 +12,156 @@ username.innerHTML = user.username;
 profilePicture.src = user.avatar;
 
 
-api.getFollows(user.username).then(followData => {
-    // console.log(followData);
-    getHowlsFromFollowers(followData);
+// api.getFollows(user.username).then(followData => {
+//     // console.log(followData);
+//     getHowlsFromFollowers(followData);
 
-  }).catch((err) => {
+//   }).catch((err) => {
 
-    alert("Not a Valid User.");
-  });
+//     alert("Not a Valid User.");
+//   });
   
  
-  function getHowlsFromFollowers(array) {
-    let allHowls = [];
-    for (let i = 0; i < array.length; i++) {
-        api.getHowls(array[i]).then(howls => {
+  // function getHowlsFromFollowers() {
+    api.getFollowedHowls(user.username).then(followedHowls => {
+      followedHowls.sort(sorter);
+      console.log(followedHowls);
+      for (let z = 0; z < followedHowls.length; ++z) {
+
+        api.getUserById(followedHowls[z].userId).then(follower => {
+          const howl = document.createElement('div');
+          howl.className = "container";
+                  const pic = document.createElement('img');
+                  pic.src = follower.avatar;
+                  howl.append(pic);
+                  howl.append(follower.first_name);
+                  howl.append(" ");
+                  howl.append(follower.last_name);
+                  howl.append(" @");
+                  howl.append(follower.username);
+                  howl.style.backgroundColor = "orange";
+                  howl.style.color = "white";
+  
+                  
+                  let month = followedHowls[z].datetime.substring(5, 7) + "/";
+                  let day = followedHowls[z].datetime.substring(8, 10);
+                  day = day + ", ";
+                  let hour = followedHowls[z].datetime.substring(11, 13) + ":";
+                  let minutes = ""; 
+                  if (parseInt(hour) < 12) {
+                      minutes = followedHowls[z].datetime.substring(14, 16) + "am";
+                  }   
+                  else {
+                      minutes = followedHowls[z].datetime.substring(14, 16) + "pm";
+                  }
+                  
+                  let postTime = month + day + hour + minutes;
+  
+                  const time = document.createElement('p');
+                  time.className = "text-end";
+                  time.innerHTML = postTime;
+                  howl.append(time);
+                  
+  
+                  const message = document.createElement('h2');
+                  message.innerHTML = followedHowls[z].text;
+                  
+                  message.className = "container py-5 text-break";
+                  message.style.backgroundColor = "white";
+                  message.style.color = "black";
+                  howl.append(message);
+                  
+                  howlList.append(howl);
+        })
+
+       
+      }
+      
+  
+    }).catch((err) => {
+  
+      alert("Couldn't get howls.");
+    });
+
+
+
+
+    // for (let i = 0; i < array.length; i++) {
+    //     api.getHowls(array[i]).then(howls => {
             
             
-            allHowls.push(howls);
+    //         allHowls.push(howls);
             
             
             
-            api.getUser(array[i]).then(followed => {
+    //         api.getUser(array[i]).then(followed => {
                 
-                for(let a = 0; a < howls.length; ++a) {
-                    const howl = document.createElement('div');
-                howl.className = "container";
-                const pic = document.createElement('img');
-                pic.src = followed.avatar;
-                howl.append(pic);
-                howl.append(followed.first_name);
-                howl.append(" ");
-                howl.append(followed.last_name);
-                howl.append(" @");
-                howl.append(followed.username);
-                howl.style.backgroundColor = "orange";
-                howl.style.color = "white";
+    //             for(let a = 0; a < howls.length; ++a) {
+    //                 const howl = document.createElement('div');
+    //             howl.className = "container";
+    //             const pic = document.createElement('img');
+    //             pic.src = followed.avatar;
+    //             howl.append(pic);
+    //             howl.append(followed.first_name);
+    //             howl.append(" ");
+    //             howl.append(followed.last_name);
+    //             howl.append(" @");
+    //             howl.append(followed.username);
+    //             howl.style.backgroundColor = "orange";
+    //             howl.style.color = "white";
 
                 
-                let month = howls[a].datetime.substring(5, 7) + "/";
-                let day = howls[a].datetime.substring(8, 10);
-                day = day + ", ";
-                let hour = howls[a].datetime.substring(11, 13) + ":";
-                let minutes = ""; 
-                if (parseInt(hour) < 12) {
-                    minutes = howls[a].datetime.substring(14, 16) + "am";
-                }   
-                else {
-                    minutes = howls[a].datetime.substring(14, 16) + "pm";
-                }
+    //             let month = howls[a].datetime.substring(5, 7) + "/";
+    //             let day = howls[a].datetime.substring(8, 10);
+    //             day = day + ", ";
+    //             let hour = howls[a].datetime.substring(11, 13) + ":";
+    //             let minutes = ""; 
+    //             if (parseInt(hour) < 12) {
+    //                 minutes = howls[a].datetime.substring(14, 16) + "am";
+    //             }   
+    //             else {
+    //                 minutes = howls[a].datetime.substring(14, 16) + "pm";
+    //             }
                 
-                let postTime = month + day + hour + minutes;
+    //             let postTime = month + day + hour + minutes;
 
-                const time = document.createElement('p');
-                time.className = "text-end";
-                time.innerHTML = postTime;
-                howl.append(time);
+    //             const time = document.createElement('p');
+    //             time.className = "text-end";
+    //             time.innerHTML = postTime;
+    //             howl.append(time);
                 
 
-                const message = document.createElement('h2');
-                message.innerHTML = howls[a].text;
+    //             const message = document.createElement('h2');
+    //             message.innerHTML = howls[a].text;
                 
-                message.className = "container py-5 text-break";
-                message.style.backgroundColor = "white";
-                message.style.color = "black";
-                howl.append(message);
+    //             message.className = "container py-5 text-break";
+    //             message.style.backgroundColor = "white";
+    //             message.style.color = "black";
+    //             howl.append(message);
                 
-                howlList.append(howl);
+    //             howlList.append(howl);
                 
-                }
-              }).catch((err) => {
+    //             }
+    //           }).catch((err) => {
             
-                alert("Not a Valid User.");
-              });
+    //             alert("Not a Valid User.");
+    //           });
             
               
 
             
         
-          }).catch((err) => {
+    //       }).catch((err) => {
         
-            alert("Not a Valid User.");
-          });
-      }
-      console.log(allHowls);
-  }
+    //         alert("Not a Valid User.");
+    //       });
+    //   }
+    //   console.log(allHowls);
+  // }
 
   function sorter (a, b) {
     
-    return a.datetime < b.datetime ? -1 : 1;
+    return a.datetime > b.datetime ? -1 : 1;
  };  
   
   

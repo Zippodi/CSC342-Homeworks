@@ -161,6 +161,49 @@ router.get('/api/howls/', (req, res) => {
   
 });
 
+//Returns the list of Howls made by the logged in user
+router.get('/api/followedHowls/:username', (req, res) => {
+  let username = req.params.username;
+  let user = users.find(item => {
+
+    return item.username == username;
+  });
+  if(!user) {
+    res.status(404).json({error: "Not Found"});
+  }
+  else {
+    let userFollows = followers[user.id].following;
+    if(!userFollows) {
+     res.status(404).json({error: "Not Found"});
+    }
+    else {
+      let follows = [];
+
+      for (i=0; i<userFollows.length; i++) {
+        // let users.find(userFollowed => userFollows[i] == userFollowed.id);
+        let userFollowed = users.find(item => {
+
+          return item.id == userFollows[i];
+        });
+        follows.push(userFollowed);
+      }
+      //gethowls from each user
+      let howlList = [];
+      for (let a = 0; a < follows.length; ++a) {
+        let followerHowls = howls.filter((item) => item.userId == follows[a].id);
+        for (let z = 0; z < followerHowls.length; ++z) {
+          howlList.push(followerHowls[z]);
+        }
+        
+      }
+      
+      res.json(howlList);
+    }
+  }
+  
+});
+
+
 //Follow a user.
 router.post('/api/follow/:username', (req, res) => {
   let username = req.params.username;
@@ -222,6 +265,23 @@ router.delete('/api/unfollow/:username', (req, res) => {
   
 });
 
+
+// Get a user by their Id
+//Returns the information about the user
+//if they exist
+router.get('/api/users/:id', (req, res) => {
+  let id = req.params.id;
+  let user = users.find(item => {
+
+    return item.id == id;
+  });
+  if(!user) {
+    res.status(404).json({error: "Not Found"});
+  }
+  else {
+    res.json(user);
+  }
+});
 
 
 

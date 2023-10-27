@@ -21,7 +21,7 @@ profilePicture.src = user.avatar;
 const query = window.location.search;
 let parameters = new URLSearchParams(query);
 let profileUsername = parameters.get('username');
-console.log(profileUsername);
+//console.log(profileUsername);
 
 api.getUser(profileUsername).then(returnedUser => {
     userProfilePic.src = returnedUser.avatar;
@@ -32,6 +32,21 @@ api.getUser(profileUsername).then(returnedUser => {
     if (returnedUser.username == user.username) {
         followButton.style.visibility = "hidden";
     }
+
+    api.getFollows(user.username).then(followedUsers => {
+        console.log(followedUsers);
+        for (let b = 0; b < followedUsers.length; ++b) {
+            if (followedUsers[b] == returnedUser.username) {
+                followButton.innerHTML = "Unfollow";
+                break;
+            }
+            
+        }
+    }).catch((err) => {
+  
+    alert("Couldn't get followed.");
+    
+    });
 
 
     

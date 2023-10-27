@@ -12,7 +12,8 @@
     color: white;
 }
 
-/* #followButton {
-    font-size: larger;
-    width: 25%;
-} */
+#followButton {
+    background-color: rgb(28, 12, 83);
+    color: white;
+    border-color: orange;
+}

@@ -132,7 +132,21 @@ class HTTPClient {
         
         return unfollowedUser;
       });
+    },
+    //Used to get the howls for the home page.
+    getFollowedAndUserHowls: (username) => {
+      return HTTPClient.get(`/api/followedHowls/${username}`).then(followedHowls => {
+        
+        // return howls;
+        return HTTPClient.get(`/api/howls/${username}`).then(userHowls => {
+          for (let z = 0; z < userHowls.length; ++z) {
+            followedHowls.push(userHowls[z]);
+          }
+          return followedHowls;
+        });
+      });
     }
+
 
 
 

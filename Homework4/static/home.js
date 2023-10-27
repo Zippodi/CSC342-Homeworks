@@ -15,7 +15,8 @@ profilePicture.src = user.avatar;
     userLink.href='/userprofile?username=' + user.username;
 
 
-    api.getFollowedHowls(user.username).then(followedHowls => {
+    
+    api.getFollowedAndUserHowls(user.username).then(followedHowls => {
       followedHowls.sort(sorter);
       for (let z = 0; z < followedHowls.length; ++z) {
 

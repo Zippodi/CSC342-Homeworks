@@ -6,6 +6,8 @@ const profilePicture = document.querySelector('#profilePic');
 const username = document.querySelector('#Username');
 const fullName = document.querySelector('#userprofileName');
 const followButton = document.querySelector('#followButton');
+
+const followsList = document.querySelector('#followsContainer > #followsList');
 // const lastName = document.querySelector('#userprofileLastName');
 const userProfileUserName = document.querySelector('#userProfileUsername');
 const userProfilePic = document.querySelector('#userprofilePic');
@@ -22,6 +24,26 @@ const query = window.location.search;
 let parameters = new URLSearchParams(query);
 let profileUsername = parameters.get('username');
 //console.log(profileUsername);
+
+api.getFollows(profileUsername).then(returnedFollows => {
+
+    for (let m = 0; m < returnedFollows.length; ++m) {
+        let followedUser = document.createElement('option');
+        followedUser.text = returnedFollows[m];
+        followsList.appendChild(followedUser);
+        
+    }
+
+
+
+}).catch((err) => {
+  
+    alert("Couldn't get followers.");
+    
+});
+
+
+
 
 api.getUser(profileUsername).then(returnedUser => {
     userProfilePic.src = returnedUser.avatar;

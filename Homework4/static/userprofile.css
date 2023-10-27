@@ -22,3 +22,12 @@
     color: white;
     text-decoration: none;
 }
+
+#followsContainer {
+    background-color: purple;
+    color: white;
+}
+
+#followsTitle {
+    color: white;
+}

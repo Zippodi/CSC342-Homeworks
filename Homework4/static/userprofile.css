@@ -17,3 +17,8 @@
     color: white;
     border-color: orange;
 }
+
+#homeLink {
+    color: white;
+    text-decoration: none;
+}

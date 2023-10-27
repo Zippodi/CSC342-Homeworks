@@ -81,6 +81,18 @@ class HTTPClient {
         console.log("From the server:", user);
         return user;
       });
+    },
+
+    postHowl: (userId, datetime, text) => {
+      let data = {
+        userId : userId,
+        datetime: datetime,
+        text: text
+      }
+      return HTTPClient.post(`/api/howls`, data).then(howl => {
+        console.log("From the server:", howl);
+        return howl;
+      });
     }
 
     

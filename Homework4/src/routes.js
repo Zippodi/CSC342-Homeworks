@@ -81,8 +81,14 @@ router.get('/api/howls/:username', (req, res) => {
 
 //Make a Howl
 router.post('/api/howls', (req, res) => {
-  let newHowl = req.body;
-  newHowl.id = howlId;
+  // let newHowl = req.body;
+  
+  let newHowl = {
+    id: howlId,
+    datetime: req.body.datetime,
+    text: req.body.text,
+    userId: req.body.userId
+  }
   ++howlId;
   howls.push(newHowl);
   

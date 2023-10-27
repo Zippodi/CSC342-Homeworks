@@ -8,6 +8,7 @@ const fullName = document.querySelector('#userprofileName');
 const followButton = document.querySelector('#followButton');
 
 const followsList = document.querySelector('#followsContainer > #followsList');
+const followsSelectButton = document.querySelector('#followsContainer > #followSelectButton');
 // const lastName = document.querySelector('#userprofileLastName');
 const userProfileUserName = document.querySelector('#userProfileUsername');
 const userProfilePic = document.querySelector('#userprofilePic');
@@ -30,6 +31,7 @@ api.getFollows(profileUsername).then(returnedFollows => {
     for (let m = 0; m < returnedFollows.length; ++m) {
         let followedUser = document.createElement('option');
         followedUser.text = returnedFollows[m];
+        followedUser.value = returnedFollows[m];
         followsList.appendChild(followedUser);
         
     }
@@ -40,6 +42,12 @@ api.getFollows(profileUsername).then(returnedFollows => {
   
     alert("Couldn't get followers.");
     
+});
+
+
+followsSelectButton.addEventListener('click', e => {
+    let selectedValue = followsList.options[followsList.selectedIndex].value;
+    document.location = "/userprofile?username=" + selectedValue;
 });
 
 

@@ -211,25 +211,30 @@ router.get('/api/followedHowls/:username', (req, res) => {
 
 
 //Follow a user.
-router.post('/api/follow/:username', (req, res) => {
-  let username = req.params.username;
-  let authenticatedUser = localStorage.getItem('user');
-  if(followers[authenticatedUser.id] == undefined) {
+router.post('/api/users/follow', (req, res) => {
+  // let username = req.params.username;
+  // let authenticatedUser = localStorage.getItem('user');
+  let followObject = {
+    userToFollow: req.body.userToFollow,
+    authenticatedUser: req.body.user
+    
+  }
+  if(followers[followObject.authenticatedUser.id] == undefined) {
     res.status(404).json({error: "Not Found"});
   }
   
   else {
     let user = users.find(item => {
 
-      return item.username == username;
+      return item.username == followObject.userToFollow.username;
     });
     if(!user) {
       res.status(404).json({error: "Not Found"});
     }
     else {
-      followers[authenticatedUser.id].following.push(parseInt(user.id));
+      followers[followObject.authenticatedUser.id].following.push(parseInt(followObject.userToFollow.id));
 
-    res.json(followers[authenticatedUser.id]);
+    res.json(followers[followObject.authenticatedUser.id]);
     }
     
   }
@@ -238,27 +243,32 @@ router.post('/api/follow/:username', (req, res) => {
 });
 
 //Unfollow a user.
-router.delete('/api/unfollow/:username', (req, res) => {
-  let username = req.params.username;
-  let authenticatedUser = localStorage.getItem('user');
-  if(followers[authenticatedUser.id] == undefined) {
+router.put('/api/users/unfollow', (req, res) => {
+  // let username = req.params.username;
+  // let authenticatedUser = localStorage.getItem('user');
+  let unfollowObject = {
+    userToUnfollow: req.body.userToUnfollow,
+    authenticatedUser: req.body.user
+    
+  }
+  if(followers[unfollowObject.authenticatedUser.id] == undefined) {
     res.status(404).json({error: "Not Found"});
   }
   
   else {
     let user = users.find(item => {
 
-      return item.username == username;
+      return item.username == unfollowObject.userToUnfollow.username;
     });
     if(!user) {
       res.status(404).json({error: "Not Found"});
     }
     else {
-      let index = followers[authenticatedUser.id].following.indexOf(parseInt(user.id));
+      let index = followers[unfollowObject.authenticatedUser.id].following.indexOf(parseInt(unfollowObject.userToUnfollow.id));
       if (index > -1) {
-        followers[authenticatedUser.id].following.splice(index, 1);
+        followers[unfollowObject.authenticatedUser.id].following.splice(index, 1);
 
-        res.json(followers[authenticatedUser.id]);
+        res.json(followers[unfollowObject.authenticatedUser.id]);
       }
       else {
         res.status(404).json({error: "Not Found"});

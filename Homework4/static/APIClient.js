@@ -35,6 +35,21 @@ class HTTPClient {
         return res.json();
       });
     }
+
+    static put(url, data)  {
+      return fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }).then(handleError).then(res => {
+        return res.json();
+      });
+  
+    }
+    
+    
     
   }
 
@@ -93,7 +108,33 @@ class HTTPClient {
         
         return howl;
       });
+    },
+
+
+
+    followUser: (userToFollow, user) => {
+      let data = {
+        userToFollow: userToFollow,
+        user: user
+      }
+      return HTTPClient.post(`/api/users/follow`, data).then(followedUser => {
+        
+        return followedUser;
+      });
+    },
+
+    unfollowUser: (userToUnfollow, user) => {
+      let data = {
+        userToUnfollow: userToUnfollow,
+        user: user
+      }
+      return HTTPClient.put(`/api/users/unfollow`, data).then(unfollowedUser => {
+        
+        return unfollowedUser;
+      });
     }
+
+
 
     
   };

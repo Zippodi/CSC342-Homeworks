@@ -40,8 +40,36 @@ api.getUser(profileUsername).then(returnedUser => {
                 followButton.innerHTML = "Unfollow";
                 break;
             }
-            
+
         }
+
+        followButton.addEventListener('click', e => {
+            if (followButton.innerHTML == "Unfollow") {
+                api.unfollowUser(returnedUser, user).then(unfollowedUser => {
+                    console.log(unfollowedUser);
+                }).catch((err) => {
+  
+                alert("Couldn't unfollow User");
+                
+                });
+
+
+                followButton.innerHTML = "Follow";
+            }
+            else {
+                api.followUser(returnedUser, user).then(followedUser => {
+                    console.log(followedUser);
+                }).catch((err) => {
+  
+                alert("Couldn't follow User");
+                
+                });
+                followButton.innerHTML = "Unfollow";
+            }
+
+
+        });
+
     }).catch((err) => {
   
     alert("Couldn't get followed.");

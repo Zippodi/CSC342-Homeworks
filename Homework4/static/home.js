@@ -7,11 +7,12 @@ const username = document.querySelector('#Username');
 const howlBox = document.querySelector('#howltextbox');
 const howlList = document.querySelector('#howlList');
 const linkButton = document.querySelector('#linkButton');
+const userLink = document.querySelector('#userLink'); 
 let user = JSON.parse(loggedInUser);
 username.innerHTML = user.username;
 profilePicture.src = user.avatar;
 
-
+    userLink.href='/userprofile?username=' + user.username;
 
 
     api.getFollowedHowls(user.username).then(followedHowls => {

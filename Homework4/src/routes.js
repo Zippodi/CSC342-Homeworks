@@ -145,29 +145,29 @@ router.get('/api/follows/:username', (req, res) => {
   
 });
 
-//Returns the list of Howls made by the logged in user
-router.get('/api/howls/', (req, res) => {
-  let username =  localStorage.getItem('user').username;
-  let user = users.find(item => {
+//Returns the list of Howls made by the logged in user NOT USED
+// router.get('/api/howls/', (req, res) => {
+//   let username =  localStorage.getItem('user').username;
+//   let user = users.find(item => {
 
-    return item.username == username;
-  });
-  if(!user) {
-    res.status(404).json({error: "Not Found"});
-  }
-  else {
-    let userFollows = followers[user.id].following;
-    if(!userFollows) {
-     res.status(404).json({error: "Not Found"});
-    }
-    else {
-      res.json(userFollows);
-    }
-  }
+//     return item.username == username;
+//   });
+//   if(!user) {
+//     res.status(404).json({error: "Not Found"});
+//   }
+//   else {
+//     let userFollows = followers[user.id].following;
+//     if(!userFollows) {
+//      res.status(404).json({error: "Not Found"});
+//     }
+//     else {
+//       res.json(userFollows);
+//     }
+//   }
   
-});
+// });
 
-//Returns the list of Howls made by the logged in user
+//Returns the list of Howls from the followers of the by the logged in user
 router.get('/api/followedHowls/:username', (req, res) => {
   let username = req.params.username;
   let user = users.find(item => {

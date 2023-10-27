@@ -1,9 +1,14 @@
 #userProfileDetails {
     background-color: orange;
+    border-radius: 5px;
 }
 
 
 #userDetails {
+    color: white;
+}
+
+#howlsTitle {
     color: white;
 }
 

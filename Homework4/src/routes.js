@@ -25,9 +25,7 @@ router.post('/api/authenticate/:username', (req, res) => {
     res.status(401).json({error: 'Not authenticated'});
   }
   else {
-    // authenticatedUser.username = user.username;
-    // authenticatedUser.userId = user.id;
-    // localStorage.setItem('loggedUser', user.username);
+    
     res.json(user);
   }
 });
@@ -39,7 +37,7 @@ router.get('/api/authenticated/:username', (req, res) => {
   let username = req.params.username;
   let authenticatedUser = localStorage.getItem('user');
   if (!authenticatedUser || authenticatedUser.username != username) {
-    res.status(404).json({error: "Not logged in."});
+    res.status(401).json({error: "Not logged in."});
   }
   else {
     let user = users.find(item => {
@@ -81,7 +79,6 @@ router.get('/api/howls/:username', (req, res) => {
 
 //Make a Howl
 router.post('/api/howls', (req, res) => {
-  // let newHowl = req.body;
   
   let newHowl = {
     id: howlId,

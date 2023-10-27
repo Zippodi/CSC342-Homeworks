@@ -60,3 +60,7 @@ body {
     border-color: rgb(28, 12, 83);
 }
 
+#userLink {
+    text-decoration: none;
+    color: white;
+}

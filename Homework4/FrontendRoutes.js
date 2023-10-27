@@ -12,5 +12,9 @@ router.get('/howler', (req, res) => {
   res.sendFile(`${html_dir}index.html`);
 });
 
+router.get('/userprofile', (req, res) => {
+  res.sendFile(`${html_dir}userprofile.html`);
+});
+
 
 module.exports = router;

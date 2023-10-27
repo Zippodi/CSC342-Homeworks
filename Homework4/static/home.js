@@ -6,26 +6,16 @@ const profilePicture = document.querySelector('#profilePic');
 const username = document.querySelector('#Username');
 const howlBox = document.querySelector('#howltextbox');
 const howlList = document.querySelector('#howlList');
-// username.innerHTML = loggedInUser.username;
+const linkButton = document.querySelector('#linkButton');
 let user = JSON.parse(loggedInUser);
 username.innerHTML = user.username;
 profilePicture.src = user.avatar;
 
 
-// api.getFollows(user.username).then(followData => {
-//     // console.log(followData);
-//     getHowlsFromFollowers(followData);
 
-//   }).catch((err) => {
 
-//     alert("Not a Valid User.");
-//   });
-  
- 
-  // function getHowlsFromFollowers() {
     api.getFollowedHowls(user.username).then(followedHowls => {
       followedHowls.sort(sorter);
-      console.log(followedHowls);
       for (let z = 0; z < followedHowls.length; ++z) {
 
         api.getUserById(followedHowls[z].userId).then(follower => {
@@ -89,7 +79,7 @@ profilePicture.src = user.avatar;
     return a.datetime > b.datetime ? -1 : 1;
  };  
   
-  
+
 const howlButton = document.querySelector('#HowlButton');
 howlButton.addEventListener('click', e => {
     let currentdate = new Date();
@@ -136,7 +126,7 @@ howlButton.addEventListener('click', e => {
       howl.append(message);
       
       howlList.prepend(howl);
-
+      howlBox.value = "";
 
 
     }).catch((err) => {
@@ -144,13 +134,4 @@ howlButton.addEventListener('click', e => {
       alert("Couldn't post howl.");
    });
 
-       
-      
-      
-  
-    
-
-    
-
 });
-

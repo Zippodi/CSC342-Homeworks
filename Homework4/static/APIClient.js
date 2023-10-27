@@ -43,7 +43,7 @@ class HTTPClient {
   export default {
     getUser: (username) => {
         return HTTPClient.get(`/api/getuser/${username}`).then(users => {
-          // console.log("From the server:", users);
+          
           return users;
         });
       },
@@ -52,33 +52,33 @@ class HTTPClient {
         username: username
       }
       return HTTPClient.post(`/api/authenticate/${username}`, data).then(users => {
-        // console.log("From the server:", users);
+        
         return users;
       });
     },
     getFollows: (username) => {
       return HTTPClient.get(`/api/follows/${username}`).then(users => {
-        // console.log("From the server:", users);
+        
         return users;
       });
     },
     getHowls: (username) => {
       return HTTPClient.get(`/api/howls/${username}`).then(howls => {
-        // console.log("From the server:", howls);
+        
         return howls;
       });
     },
 
     getFollowedHowls: (username) => {
       return HTTPClient.get(`/api/followedHowls/${username}`).then(howls => {
-        console.log("From the server:", howls);
+        
         return howls;
       });
     },
 
     getUserById: (id) => {
       return HTTPClient.get(`/api/users/${id}`).then(user => {
-        console.log("From the server:", user);
+        
         return user;
       });
     },
@@ -90,7 +90,7 @@ class HTTPClient {
         text: text
       }
       return HTTPClient.post(`/api/howls`, data).then(howl => {
-        console.log("From the server:", howl);
+        
         return howl;
       });
     }

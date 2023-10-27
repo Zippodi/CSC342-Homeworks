@@ -1,5 +1,5 @@
 #userProfileDetails {
-    background-color: orange;
+    background-color: rgb(51, 32, 122);
     border-radius: 5px;
 }
 
@@ -15,7 +15,7 @@
 #followButton {
     background-color: rgb(28, 12, 83);
     color: white;
-    border-color: orange;
+    border-color: rgb(51, 32, 122);
 }
 
 #homeLink {
@@ -24,7 +24,8 @@
 }
 
 #followsContainer {
-    background-color: purple;
+    background-color: rgb(16, 17, 112);
+    border-radius: 5px;
     color: white;
 }
 

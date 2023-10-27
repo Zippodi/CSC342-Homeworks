@@ -9,7 +9,6 @@ const followButton = document.querySelector('#followButton');
 
 const followsList = document.querySelector('#followsContainer > #followsList');
 const followsSelectButton = document.querySelector('#followsContainer > #followSelectButton');
-// const lastName = document.querySelector('#userprofileLastName');
 const userProfileUserName = document.querySelector('#userProfileUsername');
 const userProfilePic = document.querySelector('#userprofilePic');
 let user = JSON.parse(loggedInUser);
@@ -20,11 +19,9 @@ profilePicture.src = user.avatar;
 
 
 
-// Get id from URL
 const query = window.location.search;
 let parameters = new URLSearchParams(query);
 let profileUsername = parameters.get('username');
-//console.log(profileUsername);
 
 api.getFollows(profileUsername).then(returnedFollows => {
 
@@ -135,7 +132,7 @@ api.getHowls(profileUsername).then(returnedHowls => {
             howl.append(" @");
             howl.append(returnedUser.username);
             
-            howl.style.backgroundColor = "orange";
+            howl.style.backgroundColor = "#050f42";
             howl.style.color = "white";
 
             

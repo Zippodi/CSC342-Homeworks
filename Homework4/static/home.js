@@ -36,7 +36,7 @@ profilePicture.src = user.avatar;
                   link.style.color = "white";
                   link.append(follower.username);
                   howl.append(link);
-                  howl.style.backgroundColor = "orange";
+                  howl.style.backgroundColor = "#050f42";
                   howl.style.color = "white";
   
                   
@@ -110,7 +110,7 @@ howlButton.addEventListener('click', e => {
         link.style.color = "white";
         link.append(user.username);
         howl.append(link);
-        howl.style.backgroundColor = "orange";
+        howl.style.backgroundColor = "#050f42";
         howl.style.color = "white";
     
         let month = datetime.substring(5, 7) + "/";

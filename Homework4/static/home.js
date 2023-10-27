@@ -28,7 +28,12 @@ profilePicture.src = user.avatar;
                   howl.append(" ");
                   howl.append(follower.last_name);
                   howl.append(" @");
-                  howl.append(follower.username);
+                  const link = document.createElement('a');
+                  link.href = '/userprofile?username=' + follower.username;
+                  link.style.textDecoration = "none";
+                  link.style.color = "white";
+                  link.append(follower.username);
+                  howl.append(link);
                   howl.style.backgroundColor = "orange";
                   howl.style.color = "white";
   
@@ -95,7 +100,12 @@ howlButton.addEventListener('click', e => {
       howl.append(" ");
       howl.append(user.last_name);
       howl.append(" @");
-      howl.append(user.username);
+      const link = document.createElement('a');
+      link.href = '/userprofile?username=' + user.username;
+      link.style.textDecoration = "none";
+      link.style.color = "white";
+      link.append(user.username);
+      howl.append(link);
       howl.style.backgroundColor = "orange";
       howl.style.color = "white";
   

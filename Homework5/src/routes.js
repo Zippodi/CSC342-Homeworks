@@ -1,15 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const apiRouter = require('./api/APIRoutes');
-const frontendRouter = require('./frontend/FrontendRoutes');
-
 
 router.use(express.json());
 
 
 
-apiRouter.post('/users/login', (req,  res) => {
+router.post('/users/login', (req,  res) => {
     if(req.body.username && req.body.password) {
       UserDAO.getUserByCredentials(req.body.username, req.body.password).then(user => {
         let result = {
@@ -29,14 +26,14 @@ apiRouter.post('/users/login', (req,  res) => {
     }
   });
   
-  apiRouter.post('/users/logout', (req,  res) => {
+  router.post('/users/logout', (req,  res) => {
     removeToken(req, res);
   
     res.json({success: true});
   });
   
   
-  apiRouter.get('/users/current', TokenMiddleware, (req,  res) => {
+  router.get('/users/current', TokenMiddleware, (req,  res) => {
     res.json(req.user);
   });
 

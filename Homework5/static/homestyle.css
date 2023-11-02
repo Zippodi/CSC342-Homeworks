@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans:wght@500&display=swap');
+
+
+body {
+    background-color: rgb(58, 55, 212);
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+}
+
+.square-box {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.HomeWindow {
+    background-color: rgb(26, 58, 94);
+    border-radius: 20px;
+  }

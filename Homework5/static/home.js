@@ -18,8 +18,7 @@ api.getCurrentUser().then(user => {
     document.getElementById('loggedInUser').appendChild(pic);
     document.getElementById('loggedInUser').appendChild(document.createElement('br'));
     document.getElementById('loggedInUser').appendChild(link);
-  })
-  .catch(error => {
+  }).catch(error => {
     if(error.status === 401) {
       console.log("We are not logged in");
       document.location = '/';

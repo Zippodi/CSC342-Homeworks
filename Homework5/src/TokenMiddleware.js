@@ -30,7 +30,6 @@ exports.TokenMiddleware = (req, res, next) => {
   
 
   try {
-    //const decoded = jwt.verify(token, API_SECRET)
     let header64 = token.split(".")[0];
     let payload64 = token.split(".")[1];
     let signature64 = token.split(".")[2];

@@ -47,6 +47,10 @@ exports.TokenMiddleware = (req, res, next) => {
     }
     
     let decoded = JSON.parse(payload);
+    //check if we have passed our expiration time AKA an hour has passed.
+    if (Math.floor(Date.now() / 1000) >= decoded.exp) {
+        throw(err);
+    }
     req.user = decoded;
     next(); 
   }

@@ -13,6 +13,6 @@ app.use(routes);
 const frontendRoutes = require('./FrontendRoutes');
 app.use(frontendRoutes);
 
-
+// console.log(Math.floor(Date.now() / 1000));
 // As our server to listen for incoming connections
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));

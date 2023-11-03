@@ -3,7 +3,6 @@ const crypto = require('crypto');
 
 const TOKEN_COOKIE_NAME = "UserToken";
 
-// const API_SECRET = process.env.API_SECRET_KEY;
 const API_SECRET = "60d0954e20eaa0c02b382171c33c53bc18522cc6d4805eaa02e182b0";
 
 

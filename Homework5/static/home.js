@@ -3,6 +3,7 @@ import api from './APIClient.js';
 
 api.getCurrentUser().then(user => {
     let link = document.createElement('a');
+    link.style.color = "white";
     link.href = '#';
     link.innerHTML = "Log Out";
     link.addEventListener("click", e => {
@@ -13,6 +14,7 @@ api.getCurrentUser().then(user => {
     })
     const pic = document.createElement('img');
     pic.src = user.user.avatar;
+    pic.style.width = "30%";
     document.getElementById('loggedInUser').innerHTML = `${user.user.first_name} ${user.user.last_name} ${user.user.username}`;
     document.getElementById('loggedInUser').appendChild(document.createElement('br'));
     document.getElementById('loggedInUser').appendChild(pic);

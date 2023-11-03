@@ -14,5 +14,10 @@ router.get('/index', (req, res) => {
   res.sendFile(`${html_dir}index.html`);
 });
 
+router.get('/error', (req, res) => {
+  res.sendFile(`${html_dir}error.html`);
+});
+
+
 
 module.exports = router;

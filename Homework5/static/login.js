@@ -14,10 +14,11 @@ buttonSelect.addEventListener('click', e => {
     }).catch((err) => {
      
       if(err.status === 401) {
-        errorBox.innerHTML = "Invalid username or password";
+        document.location = "/error";
+        
       }
       else {
-        alert("Not a valid User.")
+        alert("Not a valid User.");
       }
     });
     

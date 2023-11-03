@@ -8,6 +8,42 @@
         "avatar": "https://robohash.org/veniamdoloresenim.png?size=64x64&set=set1",
         "salt": "48c8947f69c054a5caa934674ce8881d02bb18fb59d5a63eeaddff735b0e9",
         "password": "83d9bdb5e20f3571b087db9aabf190a296741c3e864d7742f35658cfccc1b79c4599aad25084aa9a28c649a50c92244227b3e53e197621301d619d1ea01873c4"
+    },
+    {
+      "id": 2,
+      "first_name": "Gra",
+      "last_name": "Duate",
+      "username": "graduate",
+      "avatar": "https://robohash.org/nullaautemin.png?size=64x64&set=set1",
+      "salt": "71f65c417a158997b61d43d502164a5d6c28bc0de835491055aaa4a95cad824357a5a44dd5fb2e5d7e6ab433f4da0a43319d",
+      "password": "4a4830df2020ce68505663a0f731a5fee14cd9568f65ce66ed009ecdd11514a24e8bc9b8f53d3e87e618e097027d6cdee75cf7f84c67cef6d43b92b4bf81e59b"
+    },
+    {
+      "id": 3,
+      "first_name": "Vassily",
+      "last_name": "Yeskov",
+      "username": "vyeskov2",
+      "avatar": "https://robohash.org/teneturlaborenon.png?size=64x64&set=set1",
+      "salt": "691c2c4dbf04d654bb65dd37bcd23e91c182a3c8ea89c5e63cba65e5cbae773d138994324f6fd6785d85e98dbd8206892ad1",
+      "password": "9e9bf69df0dddea6495f526a0339228a92302d6e2e3f0c83ad0b4556a770fa08614c8c056ca1e01351859e32580e1060a3d5b021823a32fef9dea804b8507a58"
+    },
+    {
+      "id": 4,
+      "first_name": "Freida",
+      "last_name": "Halbert",
+      "username": "fhalbert3",
+      "avatar": "https://robohash.org/hicetminus.png?size=64x64&set=set1",
+      "salt": "ec67c551341970fd3b2b31cde7c25cd399539e17d9fbbbb02206d6f58819ad6170e752c23f1aff280e01528055c9912e8207",
+      "password": "b2824b3395c9d19cee55dab03ca65544a711acf05f0ba74fddfea3cbe3664f8e81cf765db3689b222711b2af1366d3f57466adb6e6e340f47190ad62f64e1819"
+    },
+    {
+      "id": 5,
+      "first_name": "Gloria",
+      "last_name": "Macconaghy",
+      "username": "gmacconaghy4",
+      "avatar": "https://robohash.org/teneturevenietfacere.png?size=64x64&set=set1",
+      "salt": "386b6f972360604ad3ef3c7b8cfe630c2aad2a5beb20d4ec050b867c4db03607e2a4c8bd7c8dc90afa109af4b9bcd635f96d",
+      "password": "53c425b38f13398f95ea8910e1a468221109d7bd3b7d6a385791c70a12b5ce2e323d368892217944484bc244fbedb5478f4a746c43153b01ee2cb9d88ade80dc"
     }
 
 ]

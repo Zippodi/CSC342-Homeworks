@@ -1,5 +1,6 @@
 import api from './APIClient.js';
 
+
 api.getCurrentUser().then(user => {
     let link = document.createElement('a');
     link.href = '#';
@@ -10,7 +11,6 @@ api.getCurrentUser().then(user => {
         document.location = "/";
       });
     })
-    console.log(user);
     const pic = document.createElement('img');
     pic.src = user.user.avatar;
     document.getElementById('loggedInUser').innerHTML = `${user.user.first_name} ${user.user.last_name} ${user.user.username}`;

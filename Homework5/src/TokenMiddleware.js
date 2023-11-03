@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken');
 const base64url = require('base64url');
 const crypto = require('crypto');
 
@@ -42,11 +41,10 @@ exports.TokenMiddleware = (req, res, next) => {
         "alg": "HS512",
         "typ": "JWT"
       });
-    // if (header != idealHeader) {
-    //     res.status(401).json({error: 'Not authenticated'});
-    //     return;
-    // }
-    // req.user = decoded.user;
+    if (header != idealHeader) {
+        res.status(401).json({error: 'Not authenticated'});
+        return;
+    }
     let decoded = JSON.parse(payload);
     req.user = decoded;
     next(); 

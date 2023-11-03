@@ -64,9 +64,9 @@ exports.generateToken = (req, res, user) => {
 
   const hmac = crypto.createHmac('sha512', API_SECRET);
   
-    hmac.update(header64 + "." + payload64, API_SECRET);
+    base64urlhmac.update(header64 + "." + payload64, API_SECRET);
 
-    let signature = hmac.digest('hex');
+    let signature = hmac.digest('base64url');
 
 
    const token = header64 + "." + payload64 + "." + signature; 

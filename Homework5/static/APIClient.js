@@ -1,3 +1,12 @@
+const handleError = (res) => {
+  if(!res.ok) {
+    let error = new Error(res.statusText);
+    error.status = res.status;
+    throw error;
+  }
+  return res;
+};
+
 class HTTPClient {
     static get(url) {
       return fetch(url).then(res => {

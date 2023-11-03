@@ -55,5 +55,7 @@ services:
         - ./Homework5/package.json:/app/package.json
       environment:
         - PORT=80
+      env_file: 
+        - ./Homework5/.env 
 
       

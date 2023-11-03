@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/login', (req, res) => {
-  res.sendFile(`${html_dir}login.html`);
+router.get('/index', (req, res) => {
+  res.sendFile(`${html_dir}index.html`);
 });
 
 

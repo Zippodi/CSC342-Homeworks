@@ -7,18 +7,22 @@ api.getCurrentUser().then(user => {
     link.addEventListener("click", e => {
       e.preventDefault();
       api.logOut().then(() => {
-        document.location = "/login";
+        document.location = "/";
       });
     })
-  
-    document.getElementById('loggedInUser').innerHTML = `${user.first_name} ${user.last_name} (${user.username}) `;
+    console.log(user);
+    const pic = document.createElement('img');
+    pic.src = user.user.avatar;
+    document.getElementById('loggedInUser').innerHTML = `${user.user.first_name} ${user.user.last_name} ${user.user.username}`;
+    document.getElementById('loggedInUser').appendChild(document.createElement('br'));
+    document.getElementById('loggedInUser').appendChild(pic);
     document.getElementById('loggedInUser').appendChild(document.createElement('br'));
     document.getElementById('loggedInUser').appendChild(link);
   })
   .catch(error => {
     if(error.status === 401) {
       console.log("We are not logged in");
-      document.location = '/login';
+      document.location = '/';
     }
     else {
       console.log(`${error.status}`, error);

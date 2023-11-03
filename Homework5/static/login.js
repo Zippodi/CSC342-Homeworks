@@ -10,7 +10,7 @@ buttonSelect.addEventListener('click', e => {
       
       
       
-      // document.location = "/";
+      document.location = "/index";
     }).catch((err) => {
      
       if(err.status === 401) {

@@ -31,16 +31,16 @@ router.post('/api/users/login', (req,  res) => {
     }
   });
   
-  // router.post('/api/users/logout', (req,  res) => {
-  //   removeToken(req, res);
+  router.post('/api/users/logout', (req,  res) => {
+    removeToken(req, res);
   
-  //   res.json({success: true});
-  // });
+    res.json({success: true});
+  });
   
   
-  // router.get('/api/users/current', TokenMiddleware, (req,  res) => {
-  //   res.json(req.user);
-  // });
+  router.get('/api/users/current', TokenMiddleware, (req,  res) => {
+    res.json(req.user);
+  });
 
 
   module.exports = router;

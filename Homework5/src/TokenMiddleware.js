@@ -4,7 +4,8 @@ const crypto = require('crypto');
 
 const TOKEN_COOKIE_NAME = "UserToken";
 
-const API_SECRET = process.env.API_SECRET_KEY;
+// const API_SECRET = process.env.API_SECRET_KEY;
+const API_SECRET = "60d0954e20eaa0c02b382171c33c53bc18522cc6d4805eaa02e182b0";
 
 
 exports.TokenMiddleware = (req, res, next) => {
@@ -30,8 +31,24 @@ exports.TokenMiddleware = (req, res, next) => {
   
 
   try {
-    
-    req.user = decoded.user;
+    //const decoded = jwt.verify(token, API_SECRET)
+    let header64 = token.split(".")[0];
+    let payload64 = token.split(".")[1];
+    let signature64 = token.split(".")[2];
+    let header = base64url.decode(header64);
+    let payload = base64url.decode(payload64);
+    let signature = base64url.decode(signature64);
+    let idealHeader = JSON.stringify({
+        "alg": "HS512",
+        "typ": "JWT"
+      });
+    // if (header != idealHeader) {
+    //     res.status(401).json({error: 'Not authenticated'});
+    //     return;
+    // }
+    // req.user = decoded.user;
+    let decoded = JSON.parse(payload);
+    req.user = decoded;
     next(); 
   }
   catch(err) { 
@@ -64,7 +81,7 @@ exports.generateToken = (req, res, user) => {
 
   const hmac = crypto.createHmac('sha512', API_SECRET);
   
-    base64urlhmac.update(header64 + "." + payload64, API_SECRET);
+    hmac.update(header64 + "." + payload64, API_SECRET);
 
     let signature = hmac.digest('base64url');
 

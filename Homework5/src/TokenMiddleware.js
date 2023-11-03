@@ -34,17 +34,18 @@ exports.TokenMiddleware = (req, res, next) => {
     let header64 = token.split(".")[0];
     let payload64 = token.split(".")[1];
     let signature64 = token.split(".")[2];
-    let header = base64url.decode(header64);
     let payload = base64url.decode(payload64);
-    let signature = base64url.decode(signature64);
-    let idealHeader = JSON.stringify({
-        "alg": "HS512",
-        "typ": "JWT"
-      });
-    if (header != idealHeader) {
-        res.status(401).json({error: 'Not authenticated'});
-        return;
+   
+    //use hmac to repeat the process of encoding the token
+    //to see if the signature is accurate to the result 
+    //of that process.
+    const hmac = crypto.createHmac('sha512', API_SECRET);
+    hmac.update(header64 + "." + payload64, API_SECRET);
+    let whatSignatureShouldBe = hmac.digest('base64url');
+    if (signature64 != whatSignatureShouldBe) {
+       throw(err);
     }
+    
     let decoded = JSON.parse(payload);
     req.user = decoded;
     next(); 

@@ -6,9 +6,9 @@ module.exports = {
   getUserByCredentials: (username, password) => {
     return new Promise((resolve, reject) => {
       const user = users.find(user => user.username == username);
-      if (user) { // we found our user
+      if (user) { 
         crypto.pbkdf2(password, user.salt, 100000, 64, 'sha512', (err, derivedKey) => {
-          if (err) { //problem computing digest, like hash function not available
+          if (err) { 
             reject({code: 400, message: "Error: " +err});
           }
 
@@ -21,7 +21,7 @@ module.exports = {
           }
         });
       }
-      else { // if no user with provided username
+      else { 
         reject({code: 401, message: "No such user"});
       }
     })

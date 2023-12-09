@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 
 
                 
-            item = document.createElement('li');
+            item = document.createElement('p');
             item.innerHTML = textbox;
             document.querySelector("#historyList").appendChild(item);
             equation.firstValue = equation.secondValue;
